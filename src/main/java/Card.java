@@ -16,6 +16,9 @@ public class Card {
         return rank;
     }
 
+    public void setRank(int r){  // for straight flush or flush, ace became the lowest rank
+        this.rank = r;
+    }
     @Override
     public String toString() {
 
@@ -44,6 +47,10 @@ public class Card {
         }
 
         switch (this.rank) {
+            case 1:  // in case for straight flush/flush
+                cardString += "A";
+                break;
+
             case 2:
                 cardString += "2";
                 break;

@@ -4,11 +4,13 @@ public class Player {
 
     public final static int MAX_CARD = 5;
     private String name;
+    private int handRank;
     private ArrayList<Card> hand;
 
 
     public Player(String name){
         this.name = name;
+        this.handRank = 0 ;
         this.hand = new ArrayList<Card>();
     }
 
