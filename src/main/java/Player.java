@@ -41,6 +41,13 @@ public class Player {
         hand.remove(c);
     }
 
+    public void setHandRank(int value){
+        this.handRank = value;
+    }
+
+    public int getHandRank(){
+        return handRank;
+    }
     public void printHand(){
         for(int i = 0 ; i < handSize(); i ++){
             System.out.print(hand.get(i).toString() + " ");

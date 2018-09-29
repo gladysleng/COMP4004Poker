@@ -254,4 +254,39 @@ public class HandChecker {
     }
 
 
+    public int getPokerRank(ArrayList<Card>c){
+        if(isRoyalFlush(c)){
+            return 10;
+        }
+        else if(isStraightFlush(c)){
+            return 9;
+        }
+        else if(isFourOfAKind(c)){
+            return 8;
+        }
+        else if(isFullHouse(c)){
+            return 7;
+        }
+        else if(isFlush(c)){
+            return 6;
+        }
+        else if(isStraight(c)){
+            return 5;
+        }
+        else if(isThreeOfAKind(c)){
+            return 4;
+        }
+        else if(isTwoPair(c)){
+            return 3;
+        }
+        else if(isOnePair(c)){
+            return 2;
+        }
+        else if(isHighCard(c)){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
 }

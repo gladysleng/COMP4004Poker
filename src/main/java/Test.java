@@ -193,7 +193,10 @@ public class Test {
         System.out.println("testing isRoyalFlush: "+ ry.toString());
 
 
-
+        if(r1.getPokerRank(ry) > h1.getPokerRank(c)){
+            System.out.println("ry : " + r1.getPokerRank(ry));
+            System.out.println("c : " + r1.getPokerRank(c));
+        }
 
     }
 
