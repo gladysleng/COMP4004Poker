@@ -45,6 +45,7 @@ public class HandChecker {
         });
     }
 
+
     //check for full house
     public boolean isFullHouse(ArrayList<Card> c) {
         if (validSize(c)) {
@@ -235,19 +236,21 @@ public class HandChecker {
     }
 
     //royal flush
-    public boolean isRoyalFlush(ArrayList<Card> c){
-        if(validSize(c)){
+    public boolean isRoyalFlush(ArrayList<Card> c) {
+        if (validSize(c)) {
             sortHand(c);
 
             boolean t;
 
-            t = (c.get(0).getRank() == 10) && (c.get(0).getSuit() == 4)
-                    && (c.get(1).getRank() == 11) && (c.get(1).getSuit() == 4)
-                    && (c.get(2).getRank() == 12) && (c.get(2).getSuit() == 4)
-                    && (c.get(3).getRank() == 13) && (c.get(3).getSuit() == 4)
-                    && (c.get(4).getRank() == 14) && (c.get(4).getSuit() == 4);
+            t = (c.get(0).getRank() == 10)
+                    && (c.get(1).getRank() == 11)
+                    && (c.get(2).getRank() == 12)
+                    && (c.get(3).getRank() == 13)
+                    && (c.get(4).getRank() == 14);
 
-            return t;
+
+            return (t && isFlush(c));
+
 
         }
         return false;
@@ -289,4 +292,80 @@ public class HandChecker {
             return 0;
         }
     }
+
+    private boolean rangeOfFourOrThree(int i1,int i2){
+        return i1-i2 == 4 || i1-i2 == 3;
+    }
+
+    public boolean oneCardFromRoyalFlush(ArrayList<Card> c) {
+        System.out.println(c.toString());
+        if (validSize(c)) {
+            sortHand(c);
+            System.out.println("print after sortHand: " + c.toString());
+
+            // check for pairs
+            if (isOnePair(c) && rangeOfFourOrThree(c.get(c.size() - 1).getRank(), c.get(0).getRank())) {
+                sortSuit(c);
+                //check 1 & 4 || check 2 & 5
+                if ((c.get(0).getSuit() == c.get(3).getSuit()) || (c.get(1).getSuit() == c.get(4).getSuit())) {
+                    return true;
+                }
+                // check for first is the odd card, following is 11,12,13,14
+            } else if ((!(c.get(0).getRank() >= 10 && c.get(0).getRank() <= 14))) {
+                for (int i = 1; i < c.size() - 1; i++) {
+
+                    if ((!(c.get(i).getRank() >= 10 && c.get(i).getRank() <= 14))) {
+                        return false;
+                    }
+
+                    if (c.get(i).getSuit() != c.get(i + 1).getSuit()) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean oneCardFromFlush(ArrayList<Card> c){
+        if(validSize(c)) {
+            HashMap<Integer, Integer> suitBucket = new HashMap<Integer, Integer>();
+            Integer count;
+            for (Card currentCard : c) {
+                count = suitBucket.get(currentCard.getSuit());
+                if (count == null) {
+                    count = 0;
+                }
+                suitBucket.put(currentCard.getSuit(), ++count);
+            }
+
+            for (Map.Entry<Integer, Integer> entry : suitBucket.entrySet()) {
+                if (entry.getValue() == 4) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public boolean oneCardFromFullHouse(ArrayList<Card> c){
+        if(validSize(c)){
+            sortHand(c);
+
+            if(isTwoPair(c) || isThreeOfAKind(c)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean oneCardFromStraight(ArrayList<Card> c){
+
+        return false;
+
+    }
+
 }

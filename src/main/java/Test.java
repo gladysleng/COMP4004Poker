@@ -176,11 +176,11 @@ public class Test {
 
         ArrayList<Card> ry = new ArrayList<Card>();
         HandChecker r1 = new HandChecker();
-        Card ry1 = new Card(4,14);
-        Card ry2 = new Card(4,12);
-        Card ry3 = new Card(4,10);
-        Card ry4 = new Card(4,13);
-        Card ry5 = new Card(4,11);
+        Card ry1 = new Card(3,14);
+        Card ry2 = new Card(3,12);
+        Card ry3 = new Card(3,10);
+        Card ry4 = new Card(3,13);
+        Card ry5 = new Card(3,11);
         ry.add(ry1);
         ry.add(ry2);
         ry.add(ry3);
@@ -197,6 +197,60 @@ public class Test {
             System.out.println("ry : " + r1.getPokerRank(ry));
             System.out.println("c : " + r1.getPokerRank(c));
         }
+
+        ArrayList<Card> card1Ry = new ArrayList<Card>();
+        Card cl1 = new Card(3,14);
+        Card cl2 = new Card(4,14);
+        Card cl3 = new Card(4,10);
+        Card cl4 = new Card(4,13);
+        Card cl5 = new Card(4,11);
+        card1Ry.add(cl1);
+        card1Ry.add(cl2);
+        card1Ry.add(cl3);
+        card1Ry.add(cl4);
+        card1Ry.add(cl5);
+
+        System.out.println();
+        System.out.println("testing oneCardAway: "+ card1Ry.toString());
+        System.out.println("is it oneCardAwayFromRoyalFlush(true) : " + r1.oneCardFromRoyalFlush(card1Ry));
+        System.out.println("testing oneCardAway: "+ card1Ry.toString());
+
+        ArrayList<Card> card2Ry = new ArrayList<Card>();
+        Card ch1 = new Card(4,14);
+        Card ch2 = new Card(4,12);
+        Card ch3 = new Card(4,10);
+        Card ch4 = new Card(4,13);
+        Card ch5 = new Card(4,11);
+        card2Ry.add(ch1);
+        card2Ry.add(ch2);
+        card2Ry.add(ch3);
+        card2Ry.add(ch4);
+        card2Ry.add(ch5);
+
+        System.out.println();
+        System.out.println("testing oneCardAway: "+ card2Ry.toString());
+        System.out.println("is it oneCardAwayFromFlush(true) : " + r1.oneCardFromFlush(card2Ry));
+        System.out.println("testing oneCardAway: "+ card2Ry.toString());
+
+        ArrayList<Card> card3Ry = new ArrayList<Card>();
+        Card ch10 = new Card(2,14);
+        Card ch20 = new Card(3,14);
+        Card ch30 = new Card(1,10);
+        Card ch40 = new Card(2,9);
+        Card ch50 = new Card(3,10);
+        card3Ry.add(ch10);
+        card3Ry.add(ch20);
+        card3Ry.add(ch30);
+        card3Ry.add(ch40);
+        card3Ry.add(ch50);
+
+        System.out.println();
+        System.out.println("testing oneCardAway: "+ card3Ry.toString());
+        System.out.println("is it oneCardAwayFromFullHouse(true) : " + r1.oneCardFromFullHouse(card3Ry));
+        System.out.println("testing oneCardAway: "+ card3Ry.toString());
+
+
+
 
     }
 
