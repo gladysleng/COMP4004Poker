@@ -37,7 +37,7 @@ public class HandChecker {
     }
 
     // sort suit according to suit rank
-    public void sortSuit(ArrayList<Card> c){
+    public void sortSuit(ArrayList<Card> c) {
         Collections.sort(c, new Comparator<Card>() {
             public int compare(Card card1, Card card2) {
                 return card1.getSuit() - card2.getSuit();
@@ -72,10 +72,10 @@ public class HandChecker {
     }
 
     //check flush
-    public boolean isFlush(ArrayList<Card>c){
-        if(validSize(c)){
+    public boolean isFlush(ArrayList<Card> c) {
+        if (validSize(c)) {
             sortSuit(c);
-            if(c.get(0).getSuit() == c.get(c.size()-1).getSuit()){
+            if (c.get(0).getSuit() == c.get(c.size() - 1).getSuit()) {
                 return true;
             }
         }
@@ -86,7 +86,7 @@ public class HandChecker {
     public boolean isStraightFlush(ArrayList<Card> c) {
         if (validSize(c)) {
             sortHand(c);
-            if(isStraight(c)) {
+            if (isStraight(c)) {
                 //check if they have the same suit
                 for (int i = 0; i < c.size() - 1; i++) {
                     if ((c.get(i + 1).getSuit()) != ((c.get(i).getSuit()))) {
@@ -144,15 +144,15 @@ public class HandChecker {
     }
 
     //check three of a kind
-    public boolean isThreeOfAKind(ArrayList<Card> c){
-        if(validSize(c)){
+    public boolean isThreeOfAKind(ArrayList<Card> c) {
+        if (validSize(c)) {
             sortHand(c);
 
-            if(isFullHouse(c) || isFourOfAKind(c)){
+            if (isFullHouse(c) || isFourOfAKind(c)) {
                 return false;
             }
 
-            boolean a1,a2,a3;
+            boolean a1, a2, a3;
 
             //AAA23
             a1 = c.get(0).getRank() == c.get(1).getRank() &&
@@ -173,15 +173,15 @@ public class HandChecker {
     }
 
     //check two pair
-    public boolean isTwoPair(ArrayList<Card> c){
-        if(validSize(c)){
+    public boolean isTwoPair(ArrayList<Card> c) {
+        if (validSize(c)) {
             sortHand(c);
 
-            if(isFullHouse(c) || isFourOfAKind(c) || isThreeOfAKind(c)){
+            if (isFullHouse(c) || isFourOfAKind(c) || isThreeOfAKind(c)) {
                 return false;
             }
 
-            boolean a1,a2,a3;
+            boolean a1, a2, a3;
 
             //44566
             a1 = c.get(0).getRank() == c.get(1).getRank() &&
@@ -202,18 +202,18 @@ public class HandChecker {
     }
 
     //check one Pair
-    public boolean isOnePair(ArrayList<Card> c){
-        if(validSize(c)){
+    public boolean isOnePair(ArrayList<Card> c) {
+        if (validSize(c)) {
             sortHand(c);
 
             int counter = 1;
 
-            for(int i = 0 ; i < c.size() -1 ;i ++){
-                if(c.get(i+1).getRank() == c.get(i).getRank()){
-                    counter ++;
+            for (int i = 0; i < c.size() - 1; i++) {
+                if (c.get(i + 1).getRank() == c.get(i).getRank()) {
+                    counter++;
                 }
             }
-            if(counter == TWO_OF_A_KIND){
+            if (counter == TWO_OF_A_KIND) {
                 return true;
             }
 
@@ -222,13 +222,13 @@ public class HandChecker {
     }
 
     //check high card
-    public boolean isHighCard(ArrayList<Card> c){
-        if(validSize(c)){
+    public boolean isHighCard(ArrayList<Card> c) {
+        if (validSize(c)) {
             sortHand(c);
 
-            if(!isTwoPair(c) && !isThreeOfAKind(c) && !isFourOfAKind(c)
+            if (!isTwoPair(c) && !isThreeOfAKind(c) && !isFourOfAKind(c)
                     && !isFullHouse(c) && !isStraight(c) && !isStraightFlush(c)
-                    && !isFlush(c) && !isOnePair(c)){
+                    && !isFlush(c) && !isOnePair(c)) {
                 return true;
             }
         }
@@ -257,44 +257,34 @@ public class HandChecker {
     }
 
 
-    public int getPokerRank(ArrayList<Card>c){
-        if(isRoyalFlush(c)){
+    public int getPokerRank(ArrayList<Card> c) {
+        if (isRoyalFlush(c)) {
             return 10;
-        }
-        else if(isStraightFlush(c)){
+        } else if (isStraightFlush(c)) {
             return 9;
-        }
-        else if(isFourOfAKind(c)){
+        } else if (isFourOfAKind(c)) {
             return 8;
-        }
-        else if(isFullHouse(c)){
+        } else if (isFullHouse(c)) {
             return 7;
-        }
-        else if(isFlush(c)){
+        } else if (isFlush(c)) {
             return 6;
-        }
-        else if(isStraight(c)){
+        } else if (isStraight(c)) {
             return 5;
-        }
-        else if(isThreeOfAKind(c)){
+        } else if (isThreeOfAKind(c)) {
             return 4;
-        }
-        else if(isTwoPair(c)){
+        } else if (isTwoPair(c)) {
             return 3;
-        }
-        else if(isOnePair(c)){
+        } else if (isOnePair(c)) {
             return 2;
-        }
-        else if(isHighCard(c)){
+        } else if (isHighCard(c)) {
             return 1;
-        }
-        else{
+        } else {
             return 0;
         }
     }
 
-    private boolean rangeOfFourOrThree(int i1,int i2){
-        return i1-i2 == 4 || i1-i2 == 3;
+    private boolean rangeOfFourOrThree(int i1, int i2) {
+        return i1 - i2 == 4 || i1 - i2 == 3;
     }
 
     public boolean oneCardFromRoyalFlush(ArrayList<Card> c) {
@@ -328,8 +318,8 @@ public class HandChecker {
         return false;
     }
 
-    public boolean oneCardFromFlush(ArrayList<Card> c){
-        if(validSize(c)) {
+    public boolean oneCardFromFlush(ArrayList<Card> c) {
+        if (validSize(c)) {
             HashMap<Integer, Integer> suitBucket = new HashMap<Integer, Integer>();
             Integer count;
             for (Card currentCard : c) {
@@ -350,11 +340,11 @@ public class HandChecker {
         return false;
     }
 
-    public boolean oneCardFromFullHouse(ArrayList<Card> c){
-        if(validSize(c)){
+    public boolean oneCardFromFullHouse(ArrayList<Card> c) {
+        if (validSize(c)) {
             sortHand(c);
 
-            if(isTwoPair(c) || isThreeOfAKind(c)){
+            if (isTwoPair(c) || isThreeOfAKind(c)) {
                 return true;
             }
         }
@@ -362,10 +352,65 @@ public class HandChecker {
         return false;
     }
 
-    public boolean oneCardFromStraight(ArrayList<Card> c){
+    public boolean oneCardFromStraight(ArrayList<Card> c) {
+        if (validSize(c)) {
+            sortHand(c);
 
+            // case Ace but with 2345 straight
+            if (c.get(c.size() - 1).getRank() == 14) {
+                int counter = 0;
+                for (int i = 0; i < c.size() - 1; i++) {
+                    if (c.get(i).getRank() >= 2 && c.get(i).getRank() <= 5) {
+                        counter++;
+                    }
+                }
+                // if other four cards is in a range of 2345
+                if (counter == 4) {
+                    c.get(c.size() - 1).setRank(1);
+                    sortHand(c);
+                }
+            }
+            if (isOnePair(c)) {
+                if (rangeOfFourOrThree((c.get(c.size() - 1).getRank()), (c.get(0).getRank()))) {
+                    return true;
+                }
+            } else if (isHighCard(c)) {
+                if ((rangeOfFourOrThree((c.get(c.size() - 1).getRank()), (c.get(1).getRank()))) || (rangeOfFourOrThree((c.get(3).getRank()), (c.get(0).getRank())))) {
+                    return true;
+                }
+            }
+        }
         return false;
 
     }
 
+    public boolean oneCardFromStraightFlush(ArrayList<Card> c) {
+        if (validSize(c) && oneCardFromFlush(c)) {
+            sortSuit(c);
+
+            ArrayList<Card> clone = new ArrayList<Card>(c);
+
+            if (c.get(0) != c.get(2)) {
+                clone.remove(0);
+                sortHand(clone);
+
+                if (rangeOfFourOrThree(clone.get(clone.size() - 1).getRank(), clone.get(0).getRank())) {
+                    return true;
+                }
+            } else {
+                clone.remove(c.size() - 1);
+                sortHand(clone);
+                if (rangeOfFourOrThree(clone.get(clone.size() - 1).getRank(), clone.get(0).getRank())) {
+                    return true;
+                }
+            }
+
+        }
+
+        return false;
+    }
+
+
 }
+
+

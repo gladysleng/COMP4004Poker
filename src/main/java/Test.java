@@ -199,7 +199,7 @@ public class Test {
         }
 
         ArrayList<Card> card1Ry = new ArrayList<Card>();
-        Card cl1 = new Card(3,14);
+        Card cl1 = new Card(4,6);
         Card cl2 = new Card(4,14);
         Card cl3 = new Card(4,10);
         Card cl4 = new Card(4,13);
@@ -249,7 +249,43 @@ public class Test {
         System.out.println("is it oneCardAwayFromFullHouse(true) : " + r1.oneCardFromFullHouse(card3Ry));
         System.out.println("testing oneCardAway: "+ card3Ry.toString());
 
+        ArrayList<Card> card4Ry = new ArrayList<Card>();
+        Card ch101 = new Card(2,8);
+        Card ch202 = new Card(3,13);
+        Card ch303 = new Card(1,9);
+        Card ch404 = new Card(2,10);
+        Card ch505 = new Card(3,11);
+        card4Ry.add(ch101);
+        card4Ry.add(ch202);
+        card4Ry.add(ch303);
+        card4Ry.add(ch404);
+        card4Ry.add(ch505);
 
+        System.out.println();
+        System.out.println("testing oneCardAway: "+ card4Ry.toString());
+        System.out.println("is it oneCardAwayFromStraight(true) : " + r1.oneCardFromStraight(card4Ry));
+        System.out.println("testing oneCardAway: "+ card4Ry.toString());
+
+        ArrayList<Card> card5Ry = new ArrayList<Card>();
+        Card ch1011 = new Card(4,4);
+        Card ch2022 = new Card(4,6);
+        Card ch3033 = new Card(4,8);
+        Card ch4044 = new Card(4,5);
+        Card ch5055 = new Card(1,5);
+        card5Ry.add(ch1011);
+        card5Ry.add(ch2022);
+        card5Ry.add(ch3033);
+        card5Ry.add(ch4044);
+        card5Ry.add(ch5055);
+
+        System.out.println();
+        System.out.println("testing oneCardAway: "+ card5Ry.toString());
+        System.out.println("is it oneCardAwayFromStraightFlush(true) : " + r1.oneCardFromStraightFlush(card5Ry));
+        System.out.println("testing oneCardAway: "+ card5Ry.toString());
+
+        Card c31 = new Card("S10");
+        System.out.println(c31.getRank());
+        System.out.println(c31.getSuit());
 
 
     }

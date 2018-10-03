@@ -1,3 +1,6 @@
+import java.util.Map;
+import java.util.HashMap;
+
 public class Card {
 
     private int suit;
@@ -6,6 +9,11 @@ public class Card {
     public Card(int suit, int rank) {
         this.suit = suit;
         this.rank = rank;
+    }
+
+    public Card(String input){
+        this.suit = mapStringtoIntSuit(input.charAt(0));
+        this.rank = mapStringtoIntRank(input.substring(1));
     }
 
     public int getSuit() {
@@ -19,6 +27,54 @@ public class Card {
     public void setRank(int r){  // for straight flush or flush, ace became the lowest rank
         this.rank = r;
     }
+
+    private static int mapStringtoIntSuit(char input){
+        int suitRank;
+
+        switch(input){
+            case 'D':
+                suitRank = 1;
+                break;
+
+            case 'C':
+                suitRank = 2;
+                break;
+
+            case 'H':
+                suitRank = 3;
+                break;
+
+            case 'S':
+                suitRank = 4;
+                break;
+
+            default:
+                suitRank = 0;
+        }
+        return suitRank;
+    }
+
+    private static int mapStringtoIntRank(String input){
+        Map<String, Integer> map = new HashMap<String, Integer>();
+
+        map.put("2",2);
+        map.put("3",3);
+        map.put("4",4);
+        map.put("5",5);
+        map.put("6",6);
+        map.put("7",7);
+        map.put("8",8);
+        map.put("9",9);
+        map.put("10",10);
+        map.put("J",11);
+        map.put("Q",12);
+        map.put("K",13);
+        map.put("A",14);
+
+        return map.get(input);
+    }
+
+
     @Override
     public String toString() {
 

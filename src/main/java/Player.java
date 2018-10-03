@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Player {
 
-    public final static int MAX_CARD = 5;
+    private final static int MAX_CARD = 5;
     private String name;
     private int handRank;
     private ArrayList<Card> hand;
@@ -14,6 +14,10 @@ public class Player {
         this.hand = new ArrayList<Card>();
     }
 
+    public void createHand(ArrayList<Card>cardsFromInput){
+        this.hand = cardsFromInput;
+    }
+
     public ArrayList<Card> getHand(){
         return hand;
     }
@@ -21,6 +25,7 @@ public class Player {
     public int handSize(){
         return hand.size();
     }
+
     //hand can only held 5 cards
     //have to make sure unwanted cards
     //is discarded before drawing a card

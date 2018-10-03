@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Deck {
-    ArrayList<Card> cards;
+    private ArrayList<Card> cards;
 
     public Deck() {
         cards = new ArrayList<Card>();
@@ -12,6 +12,10 @@ public class Deck {
 
     public int getSize() {
         return cards.size();
+    }
+
+    public ArrayList<Card> getDeck() {
+        return cards;
     }
 
     private void createDeck() {
@@ -33,10 +37,16 @@ public class Deck {
         return cards.remove(0);
     }
 
+    public void removeCardsFromDeck(ArrayList<Card> cardsInput) {
+        cards.removeAll(cardsInput);
+    }
+
     public void printDeck(){
         for(int i = 0; i < cards.size(); i++){
             System.out.print(cards.get(i).toString() + " ");
         }
     }
+
+
 
 }
