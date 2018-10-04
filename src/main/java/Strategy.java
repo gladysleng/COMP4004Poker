@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Strategy {
 
     private HandChecker handChecker = new HandChecker();
 
-    public void changeOneCardForRoyalFlush(ArrayList<Card>c,Card drawnCard){
+    public void changeOneCardForRoyalFlush(List<Card>c,Card drawnCard){
         handChecker.sortSuit(c);
 
         // pairs lower suit

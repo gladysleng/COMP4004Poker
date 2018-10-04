@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
@@ -12,13 +13,13 @@ public class HandChecker {
     private int THREE_OF_A_KIND = 3;
 
 
-    public boolean validSize(ArrayList<Card> c) {
+    public boolean validSize(List<Card> c) {
 
         return c.size() == 5;
     }
 
     // sort the hand in ascending order according to rank
-    public void sortHand(ArrayList<Card> c) {
+    public void sortHand(List<Card> c) {
         Collections.sort(c, new Comparator<Card>() {
             public int compare(Card c1, Card c2) {
 
@@ -37,7 +38,7 @@ public class HandChecker {
     }
 
     // sort suit according to suit rank
-    public void sortSuit(ArrayList<Card> c) {
+    public void sortSuit(List<Card> c) {
         Collections.sort(c, new Comparator<Card>() {
             public int compare(Card card1, Card card2) {
                 return card1.getSuit() - card2.getSuit();
@@ -47,7 +48,7 @@ public class HandChecker {
 
 
     //check for full house
-    public boolean isFullHouse(ArrayList<Card> c) {
+    public boolean isFullHouse(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
 
@@ -72,7 +73,7 @@ public class HandChecker {
     }
 
     //check flush
-    public boolean isFlush(ArrayList<Card> c) {
+    public boolean isFlush(List<Card> c) {
         if (validSize(c)) {
             sortSuit(c);
             if (c.get(0).getSuit() == c.get(c.size() - 1).getSuit()) {
@@ -83,45 +84,47 @@ public class HandChecker {
     }
 
     //check straight flush
-    public boolean isStraightFlush(ArrayList<Card> c) {
+    public boolean isStraightFlush(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
-            if (isStraight(c)) {
-                //check if they have the same suit
-                for (int i = 0; i < c.size() - 1; i++) {
-                    if ((c.get(i + 1).getSuit()) != ((c.get(i).getSuit()))) {
-                        return false;
+            if(!isRoyalFlush(c)) {
+                if (isStraight(c)) {
+                    //check if they have the same suit
+                    for (int i = 0; i < c.size() - 1; i++) {
+                        if ((c.get(i + 1).getSuit()) != ((c.get(i).getSuit()))) {
+                            return false;
+                        }
                     }
+                    return true;
                 }
-                return true;
             }
         }
         return false;
     }
 
     //check four of a kind
-    public boolean isFourOfAKind(ArrayList<Card> c) {
+    public boolean isFourOfAKind(List<Card> c) {
 
         if (validSize(c)) {
             sortHand(c);
-            int counter = 1;
 
-            //find all 4 same rank
-            for (int i = 0; i < c.size() - 1; i++) {
-                if (c.get(i + 1).getRank() == c.get(i).getRank()) {
-                    counter++;
-                    if (counter == FOUR_OF_A_KIND) {
-                        return true;
-                    }
-                }
-            }
+            boolean t1,t2 ;
+
+            //DAAAA
+            t1 = (c.get(0).getRank() != c.get(1).getRank())
+                    && (c.get(1).getRank() == c.get(c.size()-1).getRank());
+
+            //AAAAD
+            t2 = (c.get(0).getRank() != c.get(c.size()-1).getRank())
+                    && (c.get(0).getRank() == c.get(3).getRank());
+            return (t2 || t1);
 
         }
         return false;
     }
 
     //check for straight
-    public boolean isStraight(ArrayList<Card> c) {
+    public boolean isStraight(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
             if (c.get(c.size() - 1).getRank() == 14 && c.get(0).getRank() == 2) { // if Ace involve, change to rank 1
@@ -144,7 +147,7 @@ public class HandChecker {
     }
 
     //check three of a kind
-    public boolean isThreeOfAKind(ArrayList<Card> c) {
+    public boolean isThreeOfAKind(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
 
@@ -173,7 +176,7 @@ public class HandChecker {
     }
 
     //check two pair
-    public boolean isTwoPair(ArrayList<Card> c) {
+    public boolean isTwoPair(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
 
@@ -202,7 +205,7 @@ public class HandChecker {
     }
 
     //check one Pair
-    public boolean isOnePair(ArrayList<Card> c) {
+    public boolean isOnePair(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
 
@@ -222,7 +225,7 @@ public class HandChecker {
     }
 
     //check high card
-    public boolean isHighCard(ArrayList<Card> c) {
+    public boolean isHighCard(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
 
@@ -236,7 +239,7 @@ public class HandChecker {
     }
 
     //royal flush
-    public boolean isRoyalFlush(ArrayList<Card> c) {
+    public boolean isRoyalFlush(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
 
@@ -257,7 +260,7 @@ public class HandChecker {
     }
 
 
-    public int getPokerRank(ArrayList<Card> c) {
+    public int getPokerRank(List<Card> c) {
         if (isRoyalFlush(c)) {
             return 10;
         } else if (isStraightFlush(c)) {
@@ -287,7 +290,7 @@ public class HandChecker {
         return i1 - i2 == 4 || i1 - i2 == 3;
     }
 
-    public boolean oneCardFromRoyalFlush(ArrayList<Card> c) {
+    public boolean oneCardFromRoyalFlush(List<Card> c) {
         System.out.println(c.toString());
         if (validSize(c)) {
             sortHand(c);
@@ -318,7 +321,7 @@ public class HandChecker {
         return false;
     }
 
-    public boolean oneCardFromFlush(ArrayList<Card> c) {
+    public boolean oneCardFromFlush(List<Card> c) {
         if (validSize(c)) {
             HashMap<Integer, Integer> suitBucket = new HashMap<Integer, Integer>();
             Integer count;
@@ -340,7 +343,7 @@ public class HandChecker {
         return false;
     }
 
-    public boolean oneCardFromFullHouse(ArrayList<Card> c) {
+    public boolean oneCardFromFullHouse(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
 
@@ -352,7 +355,7 @@ public class HandChecker {
         return false;
     }
 
-    public boolean oneCardFromStraight(ArrayList<Card> c) {
+    public boolean oneCardFromStraight(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
 
@@ -384,11 +387,11 @@ public class HandChecker {
 
     }
 
-    public boolean oneCardFromStraightFlush(ArrayList<Card> c) {
+    public boolean oneCardFromStraightFlush(List<Card> c) {
         if (validSize(c) && oneCardFromFlush(c)) {
             sortSuit(c);
 
-            ArrayList<Card> clone = new ArrayList<Card>(c);
+            List<Card> clone = new ArrayList<Card>(c);
 
             if (c.get(0) != c.get(2)) {
                 clone.remove(0);

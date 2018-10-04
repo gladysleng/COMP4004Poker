@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Game {
     private Deck deck;
@@ -13,8 +14,8 @@ public class Game {
         p2 = new Player("P2");
     }
 
-    private ArrayList<Card> createPlayerHand(String handString) {
-        ArrayList<Card> cardsInput = new ArrayList<Card>();
+    private List<Card> createPlayerHand(String handString) {
+        List<Card> cardsInput = new ArrayList<Card>();
         String[] cardStrings = handString.split(" ");
 
         for (String cardString : cardStrings) {

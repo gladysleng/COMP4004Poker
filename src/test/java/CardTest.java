@@ -14,24 +14,22 @@ public class CardTest {
     public void createAceCardFromStringInputTest() {
         String input = "DA";
         Card c = new Card(input);
-        assertEquals(14,c.getRank());
-        assertEquals(1,c.getSuit());
+        assertEquals(14, c.getRank());
+        assertEquals(1, c.getSuit());
     }
 
     @org.junit.Test
     public void createCardFromStringInputTest() {
         String input = "S10";
         Card c = new Card(input);
-        assertEquals(10,c.getRank());
-        assertEquals(4,c.getSuit());
+        assertEquals(10, c.getRank());
+        assertEquals(4, c.getSuit());
     }
 
     @org.junit.Test
     public void toStringTest() {
-        Card c = new Card(4,14);
-        String expectedOutput = "SA";
-        assertEquals(expectedOutput,c.toString());
+        Card c = new Card(2, 8);
+        assertEquals("C8", c.toString());
     }
-
 
 }

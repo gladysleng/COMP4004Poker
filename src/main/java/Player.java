@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Player {
 
     private final static int MAX_CARD = 5;
     private String name;
     private int handRank;
-    private ArrayList<Card> hand;
+    private List<Card> hand;
 
 
     public Player(String name){
@@ -14,11 +15,11 @@ public class Player {
         this.hand = new ArrayList<Card>();
     }
 
-    public void createHand(ArrayList<Card>cardsFromInput){
+    public void createHand(List<Card>cardsFromInput){
         this.hand = cardsFromInput;
     }
 
-    public ArrayList<Card> getHand(){
+    public List<Card> getHand(){
         return hand;
     }
 

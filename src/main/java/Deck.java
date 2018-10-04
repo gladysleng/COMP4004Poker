@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Collections;
 
 public class Deck {
@@ -14,7 +15,7 @@ public class Deck {
         return cards.size();
     }
 
-    public ArrayList<Card> getDeck() {
+    public List<Card> getDeck() {
         return cards;
     }
 
@@ -37,7 +38,7 @@ public class Deck {
         return cards.remove(0);
     }
 
-    public void removeCardsFromDeck(ArrayList<Card> cardsInput) {
+    public void removeCardsFromDeck(List<Card> cardsInput) {
         cards.removeAll(cardsInput);
     }
 
