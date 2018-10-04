@@ -29,7 +29,6 @@ public class DeckTest {
 
     @org.junit.Test
     public void poppedCardRemoveFromDeck() {
-
         Card c = deck.pop();
         assertEquals(false,deck.getDeck().contains(c));
 
@@ -46,7 +45,6 @@ public class DeckTest {
     public void removeCardsFromDeck() {
 
         deck.removeCardsFromDeck(inputCards);
-        boolean t = deck.getDeck().contains(inputCards.get(2));
-        assertEquals(false,t);
+        assertEquals(false,deck.getDeck().contains(inputCards.get(2)));
     }
 }

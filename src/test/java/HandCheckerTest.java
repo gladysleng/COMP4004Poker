@@ -858,14 +858,86 @@ public class HandCheckerTest {
     }
 
     @org.junit.Test
-    public void oneCardFromStraightFlushSequencialNoFlush() {
+    public void oneCardFromStraightFlush_OneFromStraightAndOneFromFlush() {
         List<Card> c = createHand(new int[][]{
-                {4, 10},
-                {4, 14},
-                {4, 13},
-                {4, 12},
-                {3, 11}
+                {4, 5},
+                {3, 7},
+                {4, 8},
+                {4, 9},
+                {4, 11}
         });
-        assertEquals(false, handChecker.isStraightFlush(c));
+        assertEquals(false, handChecker.oneCardFromStraightFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromStraightFlush_OneFromStraightAndAceWithDiffSuit() {
+        List<Card> c = createHand(new int[][]{
+                {4, 14},
+                {3, 3},
+                {3, 2},
+                {3, 4},
+                {3, 6}
+        });
+        assertEquals(true, handChecker.oneCardFromStraightFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromStraightFlush() {
+        List<Card> c = createHand(new int[][]{
+                {4, 11},
+                {3, 3},
+                {3, 2},
+                {3, 4},
+                {3, 6}
+        });
+        assertEquals(true, handChecker.oneCardFromStraightFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromStraightFlush_AcePair_SuitWithDDDDH() {
+        List<Card> c = createHand(new int[][]{
+                {4, 14},
+                {3, 3},
+                {3, 2},
+                {3, 4},
+                {3, 14}
+        });
+        assertEquals(true, handChecker.oneCardFromStraightFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromStraightFlush_AcePair_SuitWithSSSHS() {
+        List<Card> c = createHand(new int[][]{
+                {4, 14},
+                {4, 3},
+                {4, 2},
+                {4, 4},
+                {3, 14}
+        });
+        assertEquals(true, handChecker.oneCardFromStraightFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromStraightFlush_OnePairs_RangeOfFour() {
+        List<Card> c = createHand(new int[][]{
+                {4, 7},
+                {4, 3},
+                {4, 4},
+                {4, 6},
+                {3, 7}
+        });
+        assertEquals(true, handChecker.oneCardFromStraightFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromStraightFlush_OneFlushAndOneRankWrong() {
+        List<Card> c = createHand(new int[][]{
+                {4, 2},
+                {4, 3},
+                {4, 4},
+                {3, 5},
+                {2, 7}
+        });
+        assertEquals(false, handChecker.oneCardFromStraightFlush(c));
     }
 }

@@ -267,11 +267,11 @@ public class Test {
         System.out.println("testing oneCardAway: "+ card4Ry.toString());
 
         ArrayList<Card> card5Ry = new ArrayList<Card>();
-        Card ch1011 = new Card(4,4);
-        Card ch2022 = new Card(4,6);
-        Card ch3033 = new Card(4,8);
-        Card ch4044 = new Card(4,5);
-        Card ch5055 = new Card(1,5);
+        Card ch1011 = new Card(4,3);
+        Card ch2022 = new Card(4,2);
+        Card ch3033 = new Card(4,4);
+        Card ch4044 = new Card(4,6);
+        Card ch5055 = new Card(1,11);
         card5Ry.add(ch1011);
         card5Ry.add(ch2022);
         card5Ry.add(ch3033);
