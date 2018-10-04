@@ -291,10 +291,8 @@ public class HandChecker {
     }
 
     public boolean oneCardFromRoyalFlush(List<Card> c) {
-        System.out.println(c.toString());
         if (validSize(c)) {
             sortHand(c);
-            System.out.println("print after sortHand: " + c.toString());
 
             // check for pairs
             if (isOnePair(c) && rangeOfFourOrThree(c.get(c.size() - 1).getRank(), c.get(0).getRank())) {

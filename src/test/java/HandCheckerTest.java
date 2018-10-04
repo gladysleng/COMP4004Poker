@@ -663,19 +663,198 @@ public class HandCheckerTest {
     }
 
     @org.junit.Test
-    public void oneCardFromRoyalFlush() {
+    public void oneCardFromRoyalFlush_onePair() {
+        List<Card> c = createHand(new int[][]{
+                {2, 10},
+                {1, 11},
+                {1, 10},
+                {1, 12},
+                {1, 14}
+        });
+        assertEquals(true, handChecker.oneCardFromRoyalFlush(c));
+
     }
 
     @org.junit.Test
-    public void oneCardFromFlush() {
+    public void oneCardFromRoyalFlush_onePairbutNotFlush() {
+        List<Card> c = createHand(new int[][]{
+                {1, 9},
+                {1, 11},
+                {2, 11},
+                {1, 12},
+                {1, 14}
+        });
+        assertEquals(false, handChecker.oneCardFromRoyalFlush(c));
     }
 
     @org.junit.Test
-    public void oneCardFromFullHouse() {
+    public void oneCardFromRoyalFlush_onePairbutNotFlush_9To14() {
+        List<Card> c = createHand(new int[][]{
+                {1, 9},
+                {1, 11},
+                {2, 11},
+                {1, 12},
+                {1, 14}
+        });
+        assertEquals(false, handChecker.oneCardFromRoyalFlush(c));
     }
 
     @org.junit.Test
-    public void oneCardFromStraight() {
+    public void oneCardFromRoyalFlush_onePairTwoKindsOfSuits_10To14() {
+        List<Card> c = createHand(new int[][]{
+                {1, 10},
+                {1, 11},
+                {2, 12},
+                {1, 12},
+                {2, 14}
+        });
+        assertEquals(false, handChecker.oneCardFromRoyalFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromRoyalFlush_firstIndexIsNotRangeOf11to14() {
+        List<Card> c = createHand(new int[][]{
+                {2, 9},
+                {1, 11},
+                {1, 12},
+                {1, 12},
+                {1, 14}
+        });
+        assertEquals(true, handChecker.oneCardFromRoyalFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromRoyalFlush_firstIndexWrongRank_FourthWrongSuit() {
+        List<Card> c = createHand(new int[][]{
+                {1, 7},
+                {1, 10},
+                {1, 11},
+                {2, 12},
+                {1, 14}
+        });
+        assertEquals(false, handChecker.oneCardFromRoyalFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromRoyalFlush_TwoWrongRankOneWrongSuit() {
+        List<Card> c = createHand(new int[][]{
+                {2, 7},
+                {1, 9},
+                {1, 11},
+                {2, 12},
+                {1, 14}
+        });
+        assertEquals(false, handChecker.oneCardFromRoyalFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromFlush_CHHHH() {
+        List<Card> c = createHand(new int[][]{
+                {2, 10},
+                {1, 11},
+                {1, 9},
+                {1, 12},
+                {1, 14}
+        });
+        assertEquals(true, handChecker.oneCardFromFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromFlush_HHHHS() {
+        List<Card> c = createHand(new int[][]{
+                {3, 10},
+                {3, 11},
+                {3, 9},
+                {3, 12},
+                {4, 14}
+        });
+        assertEquals(true, handChecker.oneCardFromFlush(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromFullHouse_TwoPairs() {
+        List<Card> c = createHand(new int[][]{
+                {3, 10},
+                {3, 11},
+                {3, 2},
+                {2, 10},
+                {4, 11}
+        });
+        assertEquals(true, handChecker.oneCardFromFullHouse(c));
+
+    }
+
+    @org.junit.Test
+    public void oneCardFromFullHouse_ThreeOfAKind() {
+        List<Card> c = createHand(new int[][]{
+                {3, 10},
+                {3, 11},
+                {3, 2},
+                {2, 10},
+                {4, 10}
+        });
+        assertEquals(true, handChecker.oneCardFromFullHouse(c));
+
+    }
+
+    @org.junit.Test
+    public void oneCardFromStraight_OnePairWithAce() {
+        List<Card> c = createHand(new int[][]{
+                {3, 2},
+                {3, 3},
+                {3, 14},
+                {2, 4},
+                {4, 4}
+        });
+        assertEquals(true, handChecker.oneCardFromStraight(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromStraight_withAce() {
+        List<Card> c = createHand(new int[][]{
+                {3, 2},
+                {3, 3},
+                {3, 14},
+                {2, 6},
+                {4, 5}
+        });
+        assertEquals(true, handChecker.oneCardFromStraight(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromStraight_OnePair_RangeOfFour() {
+        List<Card> c = createHand(new int[][]{
+                {3, 6},
+                {3, 3},
+                {3, 5},
+                {2, 5},
+                {4, 7}
+        });
+        assertEquals(true, handChecker.oneCardFromStraight(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromStraight_OnePair_RangeOfThree() {
+        List<Card> c = createHand(new int[][]{
+                {3, 2},
+                {3, 3},
+                {3, 4},
+                {2, 2},
+                {4, 5}
+        });
+        assertEquals(true, handChecker.oneCardFromStraight(c));
+    }
+
+    @org.junit.Test
+    public void oneCardFromStraight_TwoPairs() {
+        List<Card> c = createHand(new int[][]{
+                {3, 2},
+                {3, 3},
+                {3, 10},
+                {2, 3},
+                {4, 2}
+        });
+        assertEquals(false, handChecker.oneCardFromStraight(c));
     }
 
     @org.junit.Test
