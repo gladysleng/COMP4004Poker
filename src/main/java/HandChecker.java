@@ -398,6 +398,7 @@ public class HandChecker {
             }
 
             sortHand(clone);
+
             //ace case
             if ((clone.get(clone.size() - 1).getRank() == 14)) {
                 for (int i = 0; i < clone.size() - 1; i++) {
@@ -408,6 +409,7 @@ public class HandChecker {
                 clone.get(clone.size() - 1).setRank(1);
                 sortHand(clone);
             }
+
             if (rangeOfFourOrThree(clone.get(clone.size() - 1).getRank(), clone.get(0).getRank())) {
                 return true;
             }

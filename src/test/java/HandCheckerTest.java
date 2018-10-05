@@ -700,7 +700,7 @@ public class HandCheckerTest {
     }
 
     @org.junit.Test
-    public void oneCardFromRoyalFlush_onePairTwoKindsOfSuits_10To14() {
+    public void oneCardFromRoyalFlush_onePair2OddSuits_10To14() {
         List<Card> c = createHand(new int[][]{
                 {1, 10},
                 {1, 11},
@@ -717,7 +717,7 @@ public class HandCheckerTest {
                 {2, 9},
                 {1, 11},
                 {1, 12},
-                {1, 12},
+                {1, 13},
                 {1, 14}
         });
         assertEquals(true, handChecker.oneCardFromRoyalFlush(c));
