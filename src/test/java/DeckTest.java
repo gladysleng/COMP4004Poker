@@ -28,21 +28,21 @@ public class DeckTest {
     }
 
     @org.junit.Test
-    public void poppedCardRemoveFromDeck() {
+    public void poppedCardRemoveFromDeckTest() {
         Card c = deck.pop();
         assertEquals(false,deck.getDeck().contains(c));
 
     }
 
     @org.junit.Test
-    public void pop() {
+    public void popTest() {
         Card c = deck.getDeck().get(0);
         assertEquals(c,deck.pop());
 
     }
 
     @org.junit.Test
-    public void removeCardsFromDeck() {
+    public void removeCardsFromDeckTest() {
 
         deck.removeCardsFromDeck(inputCards);
         assertEquals(false,deck.getDeck().contains(inputCards.get(2)));

@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
+///// REMEMBER  AFTER READING THE CARD TO EXCHANGE OR AFTER EXCHANGING
+//// REMOVE IT FROM THE DECK
+
+
 public class Game {
     private Deck deck;
     private Player p1, p2;

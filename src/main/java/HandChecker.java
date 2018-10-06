@@ -87,7 +87,7 @@ public class HandChecker {
     public boolean isStraightFlush(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
-            if(!isRoyalFlush(c)) {
+            if (!isRoyalFlush(c)) {
                 if (isStraight(c)) {
                     //check if they have the same suit
                     for (int i = 0; i < c.size() - 1; i++) {
@@ -108,14 +108,14 @@ public class HandChecker {
         if (validSize(c)) {
             sortHand(c);
 
-            boolean t1,t2 ;
+            boolean t1, t2;
 
             //DAAAA
             t1 = (c.get(0).getRank() != c.get(1).getRank())
-                    && (c.get(1).getRank() == c.get(c.size()-1).getRank());
+                    && (c.get(1).getRank() == c.get(c.size() - 1).getRank());
 
             //AAAAD
-            t2 = (c.get(0).getRank() != c.get(c.size()-1).getRank())
+            t2 = (c.get(0).getRank() != c.get(c.size() - 1).getRank())
                     && (c.get(0).getRank() == c.get(3).getRank());
             return (t2 || t1);
 
@@ -286,7 +286,7 @@ public class HandChecker {
         }
     }
 
-    private boolean rangeOfFourOrThree(int i1, int i2) {
+    public boolean rangeOfFourOrThree(int i1, int i2) {
         return i1 - i2 == 4 || i1 - i2 == 3;
     }
 
@@ -353,29 +353,37 @@ public class HandChecker {
         return false;
     }
 
+    public void changeRankChangeForAce(List<Card> c) {
+        sortHand(c);
+        {
+            int counter = 0;
+            for (int i = 0; i < c.size() - 1; i++) {
+                if (c.get(i).getRank() >= 2 && c.get(i).getRank() <= 5) {
+                    counter++;
+                }
+            }
+            // if other four cards is in a range of 2345
+            if (counter == 4 || counter == 3) {
+                c.get(c.size() - 1).setRank(1);
+                sortHand(c);
+            }
+
+        }
+    }
+
     public boolean oneCardFromStraight(List<Card> c) {
         if (validSize(c)) {
             sortHand(c);
 
             // case Ace but with 2345 straight
             if (c.get(c.size() - 1).getRank() == 14) {
-                int counter = 0;
-                for (int i = 0; i < c.size() - 1; i++) {
-                    if (c.get(i).getRank() >= 2 && c.get(i).getRank() <= 5) {
-                        counter++;
-                    }
-                }
-                // if other four cards is in a range of 2345
-                if (counter == 4) {
-                    c.get(c.size() - 1).setRank(1);
-                    sortHand(c);
-                }
+                changeRankChangeForAce(c);
             }
             if (isOnePair(c)) {
                 if (rangeOfFourOrThree((c.get(c.size() - 1).getRank()), (c.get(0).getRank()))) {
                     return true;
                 }
-            } else if (isHighCard(c)) {
+            } else {
                 if ((rangeOfFourOrThree((c.get(c.size() - 1).getRank()), (c.get(1).getRank()))) || (rangeOfFourOrThree((c.get(3).getRank()), (c.get(0).getRank())))) {
                     return true;
                 }
@@ -414,6 +422,28 @@ public class HandChecker {
                 return true;
             }
         }
+        return false;
+    }
+
+    public boolean isThreeOfSameSuit(List<Card>c){
+        if (validSize(c)) {
+            HashMap<Integer, Integer> suitBucket = new HashMap<Integer, Integer>();
+            Integer count;
+            for (Card currentCard : c) {
+                count = suitBucket.get(currentCard.getSuit());
+                if (count == null) {
+                    count = 0;
+                }
+                suitBucket.put(currentCard.getSuit(), ++count);
+            }
+
+            for (Map.Entry<Integer, Integer> entry : suitBucket.entrySet()) {
+                if (entry.getValue() == 3) {
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 

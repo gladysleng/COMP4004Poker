@@ -31,20 +31,20 @@ public class PlayerTest {
     }
 
     @org.junit.Test
-    public void createHand() {
+    public void createHandTest() {
         player.createHand(inputCards);
         assertEquals(inputCards,player.getHand());
     }
 
     @org.junit.Test
-    public void drawCard() {
+    public void drawCardTest() {
         Card drawnCard = deck.getDeck().get(0);
         player.drawCard(deck);
         assertEquals(true,player.getHand().contains(drawnCard));
     }
 
     @org.junit.Test
-    public void sizeOfDeckAfterDrawCard() {
+    public void sizeOfDeckAfterDrawCardTest() {
         Deck d = new Deck();
         Player p1 = new Player("p1");
         p1.drawCard(d);
@@ -53,7 +53,7 @@ public class PlayerTest {
     }
 
     @org.junit.Test
-    public void discardCard() {
+    public void discardCardTest() {
         player.createHand(inputCards);
         player.discardCard(c1);
         assertEquals(false,player.getHand().contains(c1));
