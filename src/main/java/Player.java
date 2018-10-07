@@ -54,6 +54,7 @@ public class Player {
     public int getHandRank(){
         return handRank;
     }
+
     public void printHand(){
         for(int i = 0 ; i < handSize(); i ++){
             System.out.print(hand.get(i).toString() + " ");

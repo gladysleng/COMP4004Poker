@@ -30,6 +30,12 @@ public class StrategyTest {
         return hand;
     }
 
+    private void assertDiscardedCards(List<Card> expectedDiscardedCards, List<Card> discardedCards) {
+        h.sortHand(expectedDiscardedCards);
+        h.sortHand(discardedCards);
+        assertEquals(expectedDiscardedCards, discardedCards);
+    }
+
     @org.junit.Test
     public void changeOneCardForRoyalFlush_OnePairTest() {
         List<Card> cardsToExchange = createHand(new int[][]{
@@ -44,6 +50,10 @@ public class StrategyTest {
                 {1, 14}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(0)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(2),
                 c.get(1),
@@ -52,9 +62,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForRoyalFlush(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForRoyalFlush(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -71,6 +81,10 @@ public class StrategyTest {
                 {1, 14}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(0)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(1),
                 c.get(2),
@@ -79,9 +93,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForRoyalFlush(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForRoyalFlush(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -98,6 +112,9 @@ public class StrategyTest {
                 {3, 6}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(0)
+        });
 
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(2),
@@ -107,9 +124,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForRoyalFlush(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForRoyalFlush(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -126,6 +143,10 @@ public class StrategyTest {
                 {3, 6}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(0)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(2),
                 c.get(1),
@@ -134,9 +155,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForRoyalFlush(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForRoyalFlush(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -153,6 +174,10 @@ public class StrategyTest {
                 {3, 6}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(4)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(2),
                 c.get(1),
@@ -161,9 +186,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForFullHouse(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForFullHouse(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -180,6 +205,10 @@ public class StrategyTest {
                 {3, 6}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(2)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(1),
@@ -188,9 +217,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForFullHouse(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForFullHouse(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -207,6 +236,10 @@ public class StrategyTest {
                 {3, 5}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(2)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(1),
@@ -215,9 +248,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForFullHouse(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForFullHouse(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -235,6 +268,10 @@ public class StrategyTest {
                 {3, 3}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(2)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(1),
@@ -243,9 +280,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForFullHouse(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForFullHouse(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -262,6 +299,10 @@ public class StrategyTest {
                 {3, 3}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(3)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(1),
@@ -270,9 +311,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForFlush(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForFlush(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -289,6 +330,10 @@ public class StrategyTest {
                 {3, 3}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(3)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(1),
@@ -297,9 +342,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForFlush(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForFlush(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -316,6 +361,10 @@ public class StrategyTest {
                 {3, 3}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(1)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(3),
@@ -324,9 +373,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForStraight(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForStraight(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -343,6 +392,10 @@ public class StrategyTest {
                 {3, 3}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(2)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(3),
@@ -351,9 +404,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForStraight(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForStraight(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -370,6 +423,10 @@ public class StrategyTest {
                 {3, 9}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(1)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(3),
@@ -378,9 +435,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForStraight(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForStraight(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -397,6 +454,10 @@ public class StrategyTest {
                 {3, 9}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(2)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(3),
@@ -405,8 +466,9 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        strategy.changeOneCardForStraight(c, cardsToExchange);
+        List<Card> discardedCards = strategy.changeOneCardForStraight(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
 
@@ -424,6 +486,10 @@ public class StrategyTest {
                 {3, 14}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(3)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(2),
@@ -434,9 +500,9 @@ public class StrategyTest {
 
         expectedOutput.get(expectedOutput.size()-1).setRank(1);
         h.sortHand(expectedOutput);
-        strategy.changeOneCardForStraight(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForStraight(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -453,6 +519,10 @@ public class StrategyTest {
                 {3, 14}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(4)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(2),
@@ -463,9 +533,9 @@ public class StrategyTest {
 
         expectedOutput.get(expectedOutput.size()-1).setRank(1);
         h.sortHand(expectedOutput);
-        strategy.changeOneCardForStraight(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForStraight(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
@@ -482,6 +552,10 @@ public class StrategyTest {
                 {3, 14}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(0)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(1),
                 c.get(2),
@@ -492,11 +566,12 @@ public class StrategyTest {
 
         expectedOutput.get(expectedOutput.size()-1).setRank(1);
         h.sortHand(expectedOutput);
-        strategy.changeOneCardForStraight(c, cardsToExchange);
-
+        List<Card> discardedCards = strategy.changeOneCardForStraight(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
+    @org.junit.Test
     public void changeTwoCardsForThreeSameSuitTest(){
         List<Card> cardsToExchange = createHand(new int[][]{
                 {2, 7},
@@ -511,6 +586,11 @@ public class StrategyTest {
                 {1, 14}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(3),
+                c.get(4)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(1),
                 c.get(2),
@@ -519,14 +599,16 @@ public class StrategyTest {
                 cardsToExchange.get(1)
         });
 
-        strategy.changeTwoCardsForThreeOfAKind(c, cardsToExchange);
+        List<Card> discardedCards = strategy.changeTwoCardsForThreeSameSuit(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
+    @org.junit.Test
     public void changeThreeCardsForOnePairTest(){
         List<Card> cardsToExchange = createHand(new int[][]{
                 {2, 7},
-                {2, 3},
+                {2, 12},
                 {4, 5}
         });
 
@@ -538,22 +620,30 @@ public class StrategyTest {
                 {1, 14}
         });
 
-        List<Card> expectedOutput = createExpectedHand(new Card[]{
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
                 c.get(1),
+                c.get(2),
+                c.get(4)
+        });
+
+        List<Card> expectedOutput = createExpectedHand(new Card[]{
+                c.get(0),
                 c.get(3),
                 cardsToExchange.get(2),
                 cardsToExchange.get(0),
                 cardsToExchange.get(1)
         });
 
-        strategy.changeThreeCardsForOnePair(c, cardsToExchange);
+        List<Card> discardedCards = strategy.changeThreeCardsForOnePair(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
+    @org.junit.Test
     public void changeThreeCardsForHighestCardTest(){
         List<Card> cardsToExchange = createHand(new int[][]{
                 {2, 7},
-                {2, 3},
+                {2, 12},
                 {4, 5}
         });
 
@@ -565,6 +655,12 @@ public class StrategyTest {
                 {1, 14}
         });
 
+        List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
+                c.get(0),
+                c.get(2),
+                c.get(3)
+        });
+
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(4),
                 c.get(1),
@@ -573,8 +669,9 @@ public class StrategyTest {
                 cardsToExchange.get(1)
         });
 
-        strategy.changeThreeCardsForHighCards(c, cardsToExchange);
+        List<Card> discardedCards = strategy.changeThreeCardsForHighCards(c, cardsToExchange);
         assertEquals(expectedOutput, c);
+        assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
 

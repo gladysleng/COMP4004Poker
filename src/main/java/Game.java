@@ -35,4 +35,8 @@ public class Game {
         p1.createHand(createPlayerHand(handString));
         p1.createHand(createPlayerHand(handString2));
     }
+
+    public void printDiscardedCard(List<Card>c){
+        //
+    }
 }
