@@ -50,11 +50,9 @@ public class Strategy {
 
     }
 
-    //test for this is covered for change one card for fullHouse in the twoPairs if statement
-    public List<Card> changeOneCardForTwoPairs(List<Card> c, List<Card> cardsToChange) {
-        handChecker.sortHand(c);
-        List<Card> discardedCard = new ArrayList<Card>();
-        int rankWithoutPairs = 0;
+    private int returnRankForNumberOfCards(List<Card>c, int numOfSpecificCardInList) {
+
+        int requestedRank = 0;
         HashMap<Integer, Integer> rankBucket = new HashMap<Integer, Integer>();
         Integer count;
 
@@ -67,10 +65,16 @@ public class Strategy {
         }
 
         for (Map.Entry<Integer, Integer> entry : rankBucket.entrySet()) {
-            if (entry.getValue() == 1) {
-                rankWithoutPairs = entry.getKey();
+            if (entry.getValue() == numOfSpecificCardInList) {
+                requestedRank = entry.getKey();
             }
         }
+        return requestedRank;
+    }
+    //test for this is covered for change one card for fullHouse in the twoPairs if statement
+    public List<Card> changeOneCardForTwoPairs(List<Card> c, List<Card> cardsToChange) {
+        int rankWithoutPairs = returnRankForNumberOfCards(c, 1);
+        List<Card> discardedCard = new ArrayList<Card>();
 
         for (int i = 0; i < c.size(); i++) {
             if (c.get(i).getRank() == rankWithoutPairs) {
@@ -83,35 +87,24 @@ public class Strategy {
         return discardedCard;
     }
 
-    public List<Card> changeOneCardForFullHouse(List<Card> c, List<Card> cardsToChange) {
+    public List<Card> changeCardsForFullHouse(List<Card> c, List<Card> cardsToChange) {
         List<Card> discardedCard = new ArrayList<Card>();
         if (handChecker.isTwoPair(c)) {
             discardedCard = changeOneCardForTwoPairs(c, cardsToChange);
 
         } else {
-            //44456
-            if ((c.get(0).getRank() == c.get(2).getRank())) {
-                discardedCard.add(c.remove(3));
-            }
-            //34445
-            else if ((c.get(1).getRank() == c.get(3).getRank())) {
-                discardedCard.add(c.remove(0));
 
-            }
-            //56444
-            else if ((c.get(2).getRank() == c.get(4).getRank())) {
-                discardedCard.add(c.remove(0));
-            }
-            c.addAll(cardsToChange);
+            discardedCard = changeTwoCardsForThreeOfAKind(c,cardsToChange);
+
         }
         handChecker.sortHand(c);
         return discardedCard;
 
     }
 
-    //never gonna run because of the strategy from the requirement
+    //private because it is never gonna run because of the strategy from the requirement
     //cards with three same rank will enter fullhouse and change one card instead of this function
-    public List<Card> changeTwoCardsForThreeOfAKind(List<Card> c, List<Card> cardsToChange) {
+    private List<Card> changeTwoCardsForThreeOfAKind(List<Card> c, List<Card> cardsToChange) {
         List<Card> discardedCard = new ArrayList<Card>();
         handChecker.sortHand(c);
 
@@ -204,28 +197,11 @@ public class Strategy {
 
     public List<Card> changeThreeCardsForOnePair(List<Card> c, List<Card> cardsToChange) {
         List<Card> discardedCard = new ArrayList<Card>();
-        int rankOfPairs = 0;
-        HashMap<Integer, Integer> rankBucket = new HashMap<Integer, Integer>();
-        Integer count;
-
-        for (Card currentCard : c) {
-            count = rankBucket.get(currentCard.getRank());
-            if (count == null) {
-                count = 0;
-            }
-            rankBucket.put(currentCard.getRank(), ++count);
-        }
-
-        for (Map.Entry<Integer, Integer> entry : rankBucket.entrySet()) {
-            if (entry.getValue() == 2) {
-                rankOfPairs = entry.getKey();
-            }
-        }
-        int index = -1;
+        int rankInPairs = returnRankForNumberOfCards(c, 2);
 
         handChecker.sortHand(c);
         for (int i = 0; i < c.size(); i++) {
-            if (!(c.get(i).getRank() == rankOfPairs)) {
+            if (!(c.get(i).getRank() == rankInPairs)) {
                 discardedCard.add(c.get(i));
             }
         }

@@ -161,7 +161,7 @@ public class StrategyTest {
     }
 
     @org.junit.Test
-    public void changeOneCardForFullHouse_TwoPairsTest() {
+    public void changeCardsForFullHouse_TwoPairsTest() {
         List<Card> cardsToExchange = createHand(new int[][]{
                 {4, 7}
         });
@@ -186,15 +186,16 @@ public class StrategyTest {
                 cardsToExchange.get(0),
         });
 
-        List<Card> discardedCards = strategy.changeOneCardForFullHouse(c, cardsToExchange);
+        List<Card> discardedCards = strategy.changeCardsForFullHouse(c, cardsToExchange);
         assertEquals(expectedOutput, c);
         assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
-    public void changeOneCardForFullHouse_ThreeOfAKind_56AAATest() {
+    public void changeCardsForFullHouse_ThreeOfAKind_56AAATest() {
         List<Card> cardsToExchange = createHand(new int[][]{
-                {4, 7}
+                {4, 7},
+                {2, 9}
         });
 
         List<Card> c = createHand(new int[][]{
@@ -206,26 +207,28 @@ public class StrategyTest {
         });
 
         List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
-                c.get(2)
+                c.get(2),
+                c.get(4)
         });
 
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(1),
                 c.get(3),
-                c.get(4),
-                cardsToExchange.get(0),
+                cardsToExchange.get(1),
+                cardsToExchange.get(0)
         });
 
-        List<Card> discardedCards = strategy.changeOneCardForFullHouse(c, cardsToExchange);
+        List<Card> discardedCards = strategy.changeCardsForFullHouse(c, cardsToExchange);
         assertEquals(expectedOutput, c);
         assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
-    public void changeOneCardForFullHouse_ThreeOfAKind_34445Test() {
+    public void changeCardsForFullHouse_ThreeOfAKind_34445Test() {
         List<Card> cardsToExchange = createHand(new int[][]{
-                {4, 7}
+                {4, 7},
+                {2, 9}
         });
 
         List<Card> c = createHand(new int[][]{
@@ -237,26 +240,28 @@ public class StrategyTest {
         });
 
         List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
-                c.get(2)
+                c.get(2),
+                c.get(4)
         });
 
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(1),
                 c.get(3),
-                c.get(4),
+                cardsToExchange.get(1),
                 cardsToExchange.get(0),
         });
 
-        List<Card> discardedCards = strategy.changeOneCardForFullHouse(c, cardsToExchange);
+        List<Card> discardedCards = strategy.changeCardsForFullHouse(c, cardsToExchange);
         assertEquals(expectedOutput, c);
         assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
 
     @org.junit.Test
-    public void changeOneCardForFullHouse_ThreeOfAKind_23444Test() {
+    public void changeCardsForFullHouse_ThreeOfAKind_23444Test() {
         List<Card> cardsToExchange = createHand(new int[][]{
-                {4, 7}
+                {4, 7},
+                {2, 8}
 
         });
 
@@ -269,18 +274,19 @@ public class StrategyTest {
         });
 
         List<Card> expectedDiscardedCards = createExpectedHand(new Card[]{
-                c.get(2)
+                c.get(2),
+                c.get(4)
         });
 
         List<Card> expectedOutput = createExpectedHand(new Card[]{
                 c.get(0),
                 c.get(1),
                 c.get(3),
-                c.get(4),
-                cardsToExchange.get(0),
+                cardsToExchange.get(1),
+                cardsToExchange.get(0)
         });
 
-        List<Card> discardedCards = strategy.changeOneCardForFullHouse(c, cardsToExchange);
+        List<Card> discardedCards = strategy.changeCardsForFullHouse(c, cardsToExchange);
         assertEquals(expectedOutput, c);
         assertDiscardedCards(expectedDiscardedCards, discardedCards);
     }
