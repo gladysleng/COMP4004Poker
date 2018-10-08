@@ -15,7 +15,7 @@ public class Player {
         this.hand = new ArrayList<Card>();
     }
 
-    public void createHand(List<Card>cardsFromInput){
+    public void setHand(List<Card>cardsFromInput){
         this.hand = cardsFromInput;
     }
 
@@ -56,8 +56,10 @@ public class Player {
     }
 
     public void printHand(){
+        System.out.print(name + "  : ");
         for(int i = 0 ; i < handSize(); i ++){
             System.out.print(hand.get(i).toString() + " ");
         }
+        System.out.println();
     }
 }

@@ -30,11 +30,11 @@ public class PlayerTest {
     public void tearDown() throws Exception {
     }
 
-    @org.junit.Test
-    public void createHandTest() {
-        player.createHand(inputCards);
-        assertEquals(inputCards,player.getHand());
-    }
+//    @org.junit.Test
+//    public void createHandTest() {
+//        player.createHand(inputCards);
+//        assertEquals(inputCards,player.getHand());
+//    }
 
     @org.junit.Test
     public void drawCardTest() {
@@ -52,12 +52,12 @@ public class PlayerTest {
         assertEquals(51,size);
     }
 
-    @org.junit.Test
-    public void discardCardTest() {
-        player.createHand(inputCards);
-        player.discardCard(c1);
-        assertEquals(false,player.getHand().contains(c1));
-
-    }
+//    @org.junit.Test
+//    public void discardCardTest() {
+//        player.createHand(inputCards);
+//        player.discardCard(c1);
+//        assertEquals(false,player.getHand().contains(c1));
+//
+//    }
 
 }

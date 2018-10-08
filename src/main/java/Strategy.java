@@ -246,4 +246,38 @@ public class Strategy {
         handChecker.sortHand(c);
         return discardedCard;
     }
+
+    public void applyStrategy(List<Card> c, List<Card> cardsToChange){
+        if(handChecker.oneCardFromRoyalFlush(c)){
+            changeOneCardForRoyalFlush(c,cardsToChange);
+        }
+        else if(handChecker.oneCardFromStraightFlush(c)){
+            changeOneCardForStraightFlush(c, cardsToChange);
+        }
+        else if(handChecker.oneCardFromFlush(c)){
+            changeOneCardForFlush(c, cardsToChange);
+        }
+        else if(handChecker.oneCardFromStraight(c)){
+            changeOneCardForStraight(c, cardsToChange);
+        }
+        else if(handChecker.isThreeOfSameSuit(c)){
+            changeTwoCardsForThreeSameSuit(c, cardsToChange);
+        }
+        else if(handChecker.isThreeOfAKind(c)){
+            changeTwoCardsForThreeOfAKind(c, cardsToChange);
+        }
+        else if(handChecker.isThreeInSequence(c)){
+            changeTwoCardsForThreeInSequence(c, cardsToChange);
+        }
+        else if(handChecker.isTwoPair(c)){
+            changeOneCardForTwoPairs(c, cardsToChange);
+        }
+        else if(handChecker.isOnePair(c)){
+            changeThreeCardsForOnePair(c, cardsToChange);
+        }
+        else if(handChecker.isHighCard(c)){
+            changeThreeCardsForHighCards(c, cardsToChange);
+        }
+
+    }
 }
