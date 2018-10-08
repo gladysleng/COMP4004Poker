@@ -249,33 +249,43 @@ public class Strategy {
 
     public void applyStrategy(List<Card> c, List<Card> cardsToChange){
         if(handChecker.oneCardFromRoyalFlush(c)){
+            System.out.println("AIP is one card away from Royal Flush, exchange one card ");
             changeOneCardForRoyalFlush(c,cardsToChange);
         }
         else if(handChecker.oneCardFromStraightFlush(c)){
+            System.out.println("AIP is one card away from Straight Flush, exchange one card ");
             changeOneCardForStraightFlush(c, cardsToChange);
         }
         else if(handChecker.oneCardFromFlush(c)){
+            System.out.println("AIP is one card away from Flush, exchange one card ");
             changeOneCardForFlush(c, cardsToChange);
         }
         else if(handChecker.oneCardFromStraight(c)){
+            System.out.println("AIP is one card away from Straight, exchange one card ");
             changeOneCardForStraight(c, cardsToChange);
         }
         else if(handChecker.isThreeOfSameSuit(c)){
+            System.out.println("AIP has three of the same suit, exchange two card ");
             changeTwoCardsForThreeSameSuit(c, cardsToChange);
         }
         else if(handChecker.isThreeOfAKind(c)){
+            System.out.println("AIP has three of a same rank, exchange two card ");
             changeTwoCardsForThreeOfAKind(c, cardsToChange);
         }
         else if(handChecker.isThreeInSequence(c)){
+            System.out.println("AIP has three cards in sequence, exchange two card ");
             changeTwoCardsForThreeInSequence(c, cardsToChange);
         }
         else if(handChecker.isTwoPair(c)){
+            System.out.println("AIP has two pairs, exchange one card ");
             changeOneCardForTwoPairs(c, cardsToChange);
         }
         else if(handChecker.isOnePair(c)){
+            System.out.println("AIP has one pair, exchange three card ");
             changeThreeCardsForOnePair(c, cardsToChange);
         }
         else if(handChecker.isHighCard(c)){
+            System.out.println("AIP has high card, exchange the 3 lowest card ");
             changeThreeCardsForHighCards(c, cardsToChange);
         }
 
