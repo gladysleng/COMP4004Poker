@@ -77,9 +77,9 @@ public class HandCheckerTest {
     public void isFullHouseAABBBTest() {
         List<Card> c = createHand(new int[][]{
                 {4, 10},
-                {1, 10},
                 {2, 12},
                 {1, 12},
+                {1, 10},
                 {3, 12}
         });
         assertEquals(true, handChecker.isFullHouse(c));
@@ -89,10 +89,10 @@ public class HandCheckerTest {
     public void isFullHouseAAABBTest() {
         List<Card> c = createHand(new int[][]{
                 {4, 10},
-                {1, 10},
                 {2, 10},
                 {1, 12},
-                {3, 12}
+                {3, 12},
+                {1, 10}
         });
         assertEquals(true, handChecker.isFullHouse(c));
     }
@@ -107,6 +107,18 @@ public class HandCheckerTest {
                 {4, 11}
         });
         assertEquals(true, handChecker.isFlush(c));
+    }
+
+    @org.junit.Test
+    public void isFlushTest_invalid() {
+        List<Card> c = createHand(new int[][]{
+                {4, 10},
+                {4, 7},
+                {4, 8},
+                {3, 12},
+                {4, 11}
+        });
+        assertEquals(false, handChecker.isFlush(c));
     }
 
     @org.junit.Test
@@ -162,21 +174,21 @@ public class HandCheckerTest {
         List<Card> c = createHand(new int[][]{
                 {2, 14},
                 {1, 14},
-                {3, 14},
+                {2, 2},
                 {4, 14},
-                {2, 2}
+                {3, 14}
         });
         assertEquals(true, handChecker.isFourOfAKind(c));
     }
 
     @org.junit.Test
-    public void isFourOfAKind_77773Test() {
+    public void isFourOfAKind_777712Test() {
         List<Card> c = createHand(new int[][]{
-                {2, 11},
                 {1, 11},
+                {2, 12},
                 {3, 11},
                 {4, 11},
-                {2, 1}
+                {2, 11}
         });
         assertEquals(true, handChecker.isFourOfAKind(c));
     }
@@ -191,6 +203,18 @@ public class HandCheckerTest {
                 {2, 4}
         });
         assertEquals(false, handChecker.isStraight(c));
+    }
+
+    @org.junit.Test
+    public void isStraight_Ace2345Test() {
+        List<Card> c = createHand(new int[][]{
+                {2, 14},
+                {1, 5},
+                {3, 2},
+                {4, 3},
+                {2, 4}
+        });
+        assertEquals(true, handChecker.isStraight(c));
     }
 
     @org.junit.Test
@@ -212,7 +236,7 @@ public class HandCheckerTest {
                 {1, 13},
                 {3, 3},
                 {4, 11},
-                {2, 22}
+                {2, 2}
         });
         assertEquals(false, handChecker.isStraight(c));
     }
@@ -233,8 +257,8 @@ public class HandCheckerTest {
     public void isThreeOfAKind_AAA78Test() {
         List<Card> c = createHand(new int[][]{
                 {2, 7},
-                {1, 8},
                 {3, 3},
+                {1, 8},
                 {4, 3},
                 {2, 3}
         });
@@ -246,9 +270,10 @@ public class HandCheckerTest {
         List<Card> c = createHand(new int[][]{
                 {2, 14},
                 {1, 7},
+                {2, 3},
                 {3, 7},
-                {4, 7},
-                {2, 3}
+                {4, 7}
+
         });
         assertEquals(true, handChecker.isThreeOfAKind(c));
     }
@@ -341,9 +366,9 @@ public class HandCheckerTest {
     public void isTwoPair_46699Test() {
         List<Card> c = createHand(new int[][]{
                 {2, 9},
-                {1, 9},
                 {3, 6},
                 {4, 4},
+                {1, 9},
                 {2, 6}
         });
         assertEquals(true, handChecker.isTwoPair(c));
@@ -389,8 +414,8 @@ public class HandCheckerTest {
     public void isOnePairTest() {
         List<Card> c = createHand(new int[][]{
                 {2, 9},
-                {1, 9},
                 {3, 14},
+                {1, 9},
                 {4, 5},
                 {2, 6}
         });
@@ -953,4 +978,51 @@ public class HandCheckerTest {
         assertEquals(true, handChecker.isThreeOfSameSuit(c));
     }
 
+    @org.junit.Test
+    public void isThreeInSequenceTest_2XXX8() {
+        List<Card> c = createHand(new int[][]{
+                {2, 13},
+                {1, 11},
+                {3, 7},
+                {3, 3},
+                {3, 12}
+        });
+        assertEquals(true, handChecker.isThreeInSequence(c));
+    }
+
+    @org.junit.Test
+    public void isThreeInSequenceTest_XXX79() {
+        List<Card> c = createHand(new int[][]{
+                {2, 2},
+                {1, 4},
+                {3, 3},
+                {3, 10},
+                {3, 12}
+        });
+        assertEquals(true, handChecker.isThreeInSequence(c));
+    }
+
+    @org.junit.Test
+    public void isThreeInSequenceTest_35XXX_invalid() {
+        List<Card> c = createHand(new int[][]{
+                {2, 3},
+                {1, 9},
+                {3, 7},
+                {3, 6},
+                {3, 8}
+        });
+        assertEquals(false, handChecker.isThreeInSequence(c));
+    }
+
+    @org.junit.Test
+    public void isThreeInSequenceTest_35XXX_valid() {
+        List<Card> c = createHand(new int[][]{
+                {2, 3},
+                {1, 9},
+                {3, 7},
+                {3, 5},
+                {3, 8}
+        });
+        assertEquals(true, handChecker.isThreeInSequence(c));
+    }
 }

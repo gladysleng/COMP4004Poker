@@ -1,48 +1,755 @@
 import static org.junit.Assert.*;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class EqualRankComparatorTest {
+    EqualRankComparator comparator;
 
     @org.junit.Before
     public void setUp() throws Exception {
+        comparator = new EqualRankComparator();
+    }
+
+
+    private List<Card> createHand(int[][] cards) {
+        List<Card> hand = new ArrayList<Card>();
+        for (int[] card : cards) {
+            hand.add(new Card(card[0], card[1]));
+        }
+        return hand;
     }
 
     @org.junit.Test
-    public void compareRoyalFlush() {
+    public void compareRoyalFlush_AIPWins() {
+        List<Card> c1 = createHand(new int[][]{
+                {3, 12},
+                {3, 11},
+                {3, 13},
+                {3, 14},
+                {3, 10}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {1, 12},
+                {1, 11},
+                {1, 13},
+                {1, 14},
+                {1, 10}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareRoyalFlush(c1, c2));
     }
 
     @org.junit.Test
-    public void compareStraightFlush() {
+    public void compareRoyalFlush_OpponentWins() {
+        List<Card> c2 = createHand(new int[][]{
+                {3, 12},
+                {3, 11},
+                {3, 13},
+                {3, 14},
+                {3, 10}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {1, 12},
+                {1, 11},
+                {1, 13},
+                {1, 14},
+                {1, 10}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareRoyalFlush(c1, c2));
     }
 
     @org.junit.Test
-    public void compareFourOfAKind() {
+    public void compareStraightFlush_AIPWinsCompareRank() {
+
+        List<Card> c1 = createHand(new int[][]{
+                {3, 6},
+                {3, 7},
+                {3, 8},
+                {3, 9},
+                {3, 10}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {1, 5},
+                {1, 6},
+                {1, 7},
+                {1, 8},
+                {1, 9}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareStraightFlush(c1, c2));
+
     }
 
     @org.junit.Test
-    public void compareFullHouse() {
+    public void compareStraightFlush_OpponentWinsCompareRank() {
+
+        List<Card> c2 = createHand(new int[][]{
+                {3, 6},
+                {3, 7},
+                {3, 8},
+                {3, 9},
+                {3, 10}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {1, 5},
+                {1, 6},
+                {1, 7},
+                {1, 8},
+                {1, 9}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareStraightFlush(c1, c2));
+    }
+
+
+    @org.junit.Test
+    public void compareStraightFlush_AIPWinsCompareSuit() {
+
+        List<Card> c1 = createHand(new int[][]{
+                {3, 6},
+                {3, 7},
+                {3, 8},
+                {3, 9},
+                {3, 10}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {2, 6},
+                {2, 7},
+                {2, 8},
+                {2, 9},
+                {2, 10}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareStraightFlush(c1, c2));
+
     }
 
     @org.junit.Test
-    public void compareThreeOfAKind() {
+    public void compareStraightFlush_OpponentWinsCompareSuit() {
+
+        List<Card> c2 = createHand(new int[][]{
+                {3, 6},
+                {3, 7},
+                {3, 8},
+                {3, 9},
+                {3, 10}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {2, 6},
+                {2, 7},
+                {2, 8},
+                {2, 9},
+                {2, 10}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareStraightFlush(c1, c2));
     }
 
     @org.junit.Test
-    public void compareFlush() {
+    public void compareFourOfAKind_AIPWins() {
+        List<Card> c2 = createHand(new int[][]{
+                {3, 7},
+                {2, 7},
+                {1, 7},
+                {4, 7},
+                {3, 10}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {3, 12},
+                {2, 12},
+                {1, 12},
+                {4, 12},
+                {4, 10}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareFourOfAKind(c1, c2));
     }
 
     @org.junit.Test
-    public void compareStraight() {
+    public void compareFourOfAKind_OpponentWins() {
+        List<Card> c1 = createHand(new int[][]{
+                {3, 7},
+                {2, 7},
+                {1, 7},
+                {4, 7},
+                {3, 10}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {3, 12},
+                {2, 12},
+                {1, 12},
+                {4, 12},
+                {4, 10}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareFourOfAKind(c1, c2));
     }
 
     @org.junit.Test
-    public void compareTwoPairs() {
+    public void compareFullHouse_OpponentWins() {
+        List<Card> c1 = createHand(new int[][]{
+                {3, 7},
+                {2, 7},
+                {1, 7},
+                {2, 10},
+                {3, 10}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {3, 12},
+                {2, 12},
+                {1, 12},
+                {4, 10},
+                {1, 10}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareFullHouse(c1, c2));
     }
 
     @org.junit.Test
-    public void compareOnePair() {
+    public void compareFullHouse_AIPWins() {
+        List<Card> c2 = createHand(new int[][]{
+                {3, 7},
+                {2, 7},
+                {1, 7},
+                {4, 7},
+                {3, 10}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {3, 12},
+                {2, 12},
+                {1, 12},
+                {4, 12},
+                {4, 10}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareFullHouse(c1, c2));
     }
 
     @org.junit.Test
-    public void compareHighCard() {
+    public void compareThreeOfAKind_OpponentWins() {
+        List<Card> c1 = createHand(new int[][]{
+                {3, 7},
+                {2, 7},
+                {1, 7},
+                {4, 10},
+                {3, 11}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {3, 12},
+                {2, 12},
+                {1, 12},
+                {3, 10},
+                {1, 2}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareThreeOfAKind(c1, c2));
     }
+
+    @org.junit.Test
+    public void compareThreeOfAKind_AIPWins() {
+        List<Card> c2 = createHand(new int[][]{
+                {3, 7},
+                {2, 7},
+                {1, 7},
+                {4, 10},
+                {3, 11}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {3, 12},
+                {2, 12},
+                {1, 12},
+                {3, 10},
+                {1, 2}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareThreeOfAKind(c1, c2));
+    }
+
+    @org.junit.Test
+    public void compareFlush_AIPWinsCompareWithRecursiveRank() {
+
+        List<Card> c1 = createHand(new int[][]{
+                {3, 2},
+                {3, 3},
+                {3, 7},
+                {3, 10},
+                {3, 11}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {1, 2},
+                {1, 3},
+                {1, 6},
+                {1, 8},
+                {1, 11}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareFlush(c1, c2));
+    }
+
+    @org.junit.Test
+    public void compareFlush_OpponentWinsCompareWithRecursiveRank() {
+
+        List<Card> c1 = createHand(new int[][]{
+                {3, 2},
+                {3, 3},
+                {3, 7},
+                {3, 10},
+                {3, 11}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {1, 2},
+                {1, 3},
+                {1, 6},
+                {1, 12},
+                {1, 11}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareFlush(c1, c2));
+    }
+
+    @org.junit.Test
+    public void compareFlush_AIPWinsCompareWithSuit() {
+
+        List<Card> c1 = createHand(new int[][]{
+                {3, 2},
+                {3, 3},
+                {3, 7},
+                {3, 10},
+                {3, 11}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {1, 2},
+                {1, 3},
+                {1, 7},
+                {1, 10},
+                {1, 11}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareFlush(c1, c2));
+    }
+
+    @org.junit.Test
+    public void compareFlush_OpponentWinsCompareWithSuit() {
+
+        List<Card> c2 = createHand(new int[][]{
+                {3, 2},
+                {3, 3},
+                {3, 7},
+                {3, 10},
+                {3, 11}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {1, 2},
+                {1, 3},
+                {1, 7},
+                {1, 10},
+                {1, 11}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareFlush(c1, c2));
+    }
+
+    @org.junit.Test
+    public void compareStraight_AIPWithRank() {
+        List<Card> c2 = createHand(new int[][]{
+                {3, 2},
+                {2, 3},
+                {1, 4},
+                {4, 5},
+                {4, 6}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {4, 10},
+                {3, 11},
+                {1, 12},
+                {2, 13},
+                {1, 14}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareStraight(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareStraight_OpponentWithRank() {
+        List<Card> c1 = createHand(new int[][]{
+                {3, 2},
+                {2, 3},
+                {1, 4},
+                {4, 5},
+                {4, 6}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {4, 10},
+                {3, 11},
+                {1, 12},
+                {2, 13},
+                {1, 14}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareStraight(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareStraight_AIPWithSuit() {
+        List<Card> c1 = createHand(new int[][]{
+                {3, 2},
+                {2, 3},
+                {1, 4},
+                {4, 5},
+                {4, 6}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {4, 2},
+                {3, 3},
+                {1, 4},
+                {2, 5},
+                {1, 6}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareStraight(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareStraight_OpponentWithSuit() {
+        List<Card> c2 = createHand(new int[][]{
+                {3, 2},
+                {2, 3},
+                {1, 4},
+                {4, 5},
+                {4, 6}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {4, 2},
+                {3, 3},
+                {1, 4},
+                {2, 5},
+                {1, 6}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareStraight(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareTwoPairs_AIPdiffrentRank() {
+        List<Card> c1 = createHand(new int[][]{
+                {3, 2},
+                {2, 2},
+                {1, 14},
+                {4, 14},
+                {4, 6}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {4, 10},
+                {3, 10},
+                {1, 12},
+                {2, 13},
+                {1, 14}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareTwoPairs(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareTwoPairs_OpponentdiffrentRank() {
+        List<Card> c2 = createHand(new int[][]{
+                {3, 2},
+                {2, 2},
+                {1, 14},
+                {4, 14},
+                {4, 6}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {4, 10},
+                {3, 10},
+                {1, 12},
+                {2, 13},
+                {1, 14}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareTwoPairs(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareTwoPairs_AIPWithSuit() {
+        List<Card> c1 = createHand(new int[][]{
+                {3, 2},
+                {2, 2},
+                {3, 14},
+                {4, 14},
+                {4, 6}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {4, 10},
+                {3, 10},
+                {1, 12},
+                {2, 14},
+                {1, 14}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareTwoPairs(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareTwoPairs_OpponentWithSuit() {
+        List<Card> c2 = createHand(new int[][]{
+                {3, 2},
+                {2, 2},
+                {3, 14},
+                {4, 14},
+                {4, 6}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {4, 10},
+                {3, 10},
+                {1, 12},
+                {2, 14},
+                {1, 14}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareTwoPairs(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareOnePair_OpponentWithRank() {
+        List<Card> c1 = createHand(new int[][]{
+                {3, 2},
+                {2, 2},
+                {3, 11},
+                {4, 14},
+                {4, 6}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {4, 10},
+                {3, 10},
+                {1, 2},
+                {2, 4},
+                {1, 14}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareOnePair(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareOnePair_AIPWithRank() {
+        List<Card> c2 = createHand(new int[][]{
+                {2, 2},
+                {3, 2},
+                {3, 11},
+                {4, 14},
+                {4, 6}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {4, 10},
+                {3, 10},
+                {1, 2},
+                {2, 4},
+                {1, 14}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareOnePair(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareOnePair_AIPWithSuit() {
+        List<Card> c2 = createHand(new int[][]{
+                {2, 12},
+                {1, 12},
+                {3, 11},
+                {4, 14},
+                {4, 6}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {4, 12},
+                {3, 12},
+                {1, 2},
+                {2, 4},
+                {1, 14}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareOnePair(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareOnePair_OpponentWithSuit() {
+        List<Card> c1 = createHand(new int[][]{
+                {2, 12},
+                {1, 12},
+                {3, 11},
+                {4, 14},
+                {4, 6}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {4, 12},
+                {3, 12},
+                {1, 2},
+                {2, 4},
+                {1, 14}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareOnePair(c1, c2));
+
+    }
+
+
+    @org.junit.Test
+    public void compareHighCard_AIPWithSuit() {
+        List<Card> c1 = createHand(new int[][]{
+                {2, 2},
+                {3, 3},
+                {3, 11},
+                {4, 14},
+                {4, 6}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {4, 10},
+                {3, 6},
+                {1, 12},
+                {2, 4},
+                {1, 14}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareHighCard(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareHighCard_OpponentWithSuit() {
+        List<Card> c2 = createHand(new int[][]{
+                {2, 2},
+                {3, 3},
+                {3, 11},
+                {4, 14},
+                {4, 6}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {4, 10},
+                {3, 6},
+                {1, 12},
+                {2, 4},
+                {1, 14}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareHighCard(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareHighCard_AIPWithRank() {
+        List<Card> c2 = createHand(new int[][]{
+                {2, 2},
+                {3, 3},
+                {3, 11},
+                {4, 12},
+                {4, 6}
+        });
+
+        List<Card> c1 = createHand(new int[][]{
+                {4, 10},
+                {3, 6},
+                {1, 12},
+                {2, 4},
+                {1, 14}
+        });
+
+        List<Card> winner = c1;
+        assertEquals(winner, comparator.compareHighCard(c1, c2));
+
+    }
+
+    @org.junit.Test
+    public void compareHighCard_OpponentWithRank() {
+        List<Card> c1 = createHand(new int[][]{
+                {2, 2},
+                {3, 3},
+                {3, 11},
+                {4, 12},
+                {4, 6}
+        });
+
+        List<Card> c2 = createHand(new int[][]{
+                {4, 10},
+                {3, 6},
+                {1, 12},
+                {2, 4},
+                {1, 14}
+        });
+
+        List<Card> winner = c2;
+        assertEquals(winner, comparator.compareHighCard(c1, c2));
+
+    }
+
 }

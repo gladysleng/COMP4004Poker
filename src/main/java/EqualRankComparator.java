@@ -18,6 +18,7 @@ public class EqualRankComparator {
     public List<Card> compareStraightFlush(List<Card>c1, List<Card>c2){
         handChecker.sortHand(c1);
         handChecker.sortHand(c2);
+
         if(c1.get(c1.size()-1).getRank() == c2.get(c2.size()-1).getRank()){
             if(c1.get(c1.size()-1).getSuit() > c2.get(c2.size() - 1).getSuit()){
                 return c1;
@@ -27,7 +28,7 @@ public class EqualRankComparator {
             }
         }
         else{
-            if(c1.get(c1.size()-1).getRank() == c2.get(c2.size()-1).getRank()){
+            if(c1.get(c1.size()-1).getRank() > c2.get(c2.size()-1).getRank()){
                 return c1;
             }
             else{
@@ -85,16 +86,25 @@ public class EqualRankComparator {
 
     }
 
-    public List<Card> compareStraight(List<Card>c1 ,List<Card> c2){
+    private List<Card> compareHighestRankOfTwoHands(List<Card>c1 ,List<Card> c2){
         handChecker.sortHand(c1);
         handChecker.sortHand(c2);
 
         if(c1.get(c1.size()-1).getRank() > c2.get(c2.size()-1).getRank()){
             return c1;
         }
+        else if (c2.get(c2.size()-1).getRank() > c1.get(c1.size()-1).getRank()){
+            return c2;
+        }
+        else if (c1.get(c1.size()-1).getSuit() > c2.get(c2.size()-1).getSuit()){
+            return c1;
+        }
         else{
             return c2;
         }
+    }
+    public List<Card> compareStraight(List<Card>c1 ,List<Card> c2){
+        return compareHighestRankOfTwoHands(c1,c2);
     }
 
     private Card returnHighestCardOfPairs(List<Card>c){
@@ -111,7 +121,7 @@ public class EqualRankComparator {
 
         Map.Entry<Integer, List<Card>> highestRankMap = null;
         for (Map.Entry<Integer, List<Card>> entry : rankBucket.entrySet()) {
-            if (highestRankMap == null || entry.getKey() > highestRankMap.getKey()) {
+            if (entry.getValue().size() == 2 && (highestRankMap == null || entry.getKey() > highestRankMap.getKey())) {
                 highestRankMap = entry;
             }
         }
@@ -149,21 +159,7 @@ public class EqualRankComparator {
     }
 
     public List<Card> compareHighCard(List<Card>c1,List<Card>c2){
-        handChecker.sortHand(c1);
-        handChecker.sortHand(c2);
-
-        if(c1.get(c1.size()-1).getRank() > c2.get(c2.size()-1).getRank()){
-            return c1;
-        }
-        else if(c2.get(c2.size()-1).getRank() > c1.get(c1.size()-1).getRank()){
-            return c2;
-        }
-        else if(c1.get(c1.size()-1).getSuit() > c2.get(c2.size()-1).getSuit()){
-            return c1;
-        }
-        else{
-            return c2;
-        }
+        return compareHighestRankOfTwoHands(c1,c2);
 
     }
 
