@@ -85,6 +85,11 @@ public class Game {
 
                 aip.printHand();
             }
+            else{
+                System.out.println("AIP did not exchange any of its card");
+                aip.getHandRank();
+                aip.printHand();
+            }
             determineWinner();
 
         }
