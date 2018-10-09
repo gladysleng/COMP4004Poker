@@ -12,17 +12,9 @@ public class HandCheckerTest {
         handChecker = new HandChecker();
     }
 
-    private List<Card> createHand(int[][] cards) {
-        List<Card> hand = new ArrayList<Card>();
-        for (int[] card : cards) {
-            hand.add(new Card(card[0], card[1]));
-        }
-        return hand;
-    }
-
     @org.junit.Test
     public void validSizeTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {1, 6},
                 {1, 2},
                 {1, 3},
@@ -34,7 +26,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void sortHandTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {1, 10},
                 {1, 2},
                 {2, 12},
@@ -55,7 +47,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void sortSuitTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 2},
                 {2, 12},
@@ -75,7 +67,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isFullHouseAABBBTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {2, 12},
                 {1, 12},
@@ -87,7 +79,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isFullHouseAAABBTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {2, 10},
                 {1, 12},
@@ -99,7 +91,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {4, 7},
                 {4, 8},
@@ -111,7 +103,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isFlushTest_invalid() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {4, 7},
                 {4, 8},
@@ -123,7 +115,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isStraightFlushDifferentSuitsTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {4, 14},
                 {3, 13},
@@ -135,7 +127,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isStraightFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 7},
                 {2, 4},
                 {2, 5},
@@ -147,7 +139,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isStraightFlushAceToFiveWithFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 3},
                 {2, 5},
@@ -159,7 +151,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isStraightFlush_RoyalFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 11},
                 {2, 10},
@@ -171,7 +163,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isFourOfAKind_37777Test() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {1, 14},
                 {2, 2},
@@ -183,7 +175,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isFourOfAKind_777712Test() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {1, 11},
                 {2, 12},
                 {3, 11},
@@ -195,7 +187,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isStraightKingAce234Test() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {1, 13},
                 {3, 2},
@@ -207,7 +199,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isStraight_Ace2345Test() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {1, 5},
                 {3, 2},
@@ -219,7 +211,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isStraightTenToAceTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {1, 13},
                 {3, 10},
@@ -231,7 +223,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isStraightAceWithTwoButNotStraightTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {1, 13},
                 {3, 3},
@@ -243,7 +235,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isThreeOfAKind_XYAAATest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {1, 14},
                 {3, 3},
@@ -255,7 +247,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isThreeOfAKind_AAA78Test() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 7},
                 {3, 3},
                 {1, 8},
@@ -267,7 +259,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isThreeOfAKind_XAAAYTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {1, 7},
                 {2, 3},
@@ -280,7 +272,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isThreeOfAKind_NotFourOfAKindTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {1, 7},
                 {3, 7},
@@ -292,7 +284,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isThreeOfAKind_NotFullHouseTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {1, 14},
                 {3, 7},
@@ -304,7 +296,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isTwoPair_NotFullHouseTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 3},
                 {1, 4},
                 {3, 3},
@@ -316,7 +308,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isTwoPair_NotFourOfAKindTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 3},
                 {1, 4},
                 {3, 4},
@@ -328,7 +320,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isTwoPair_NotThreeOfAKindTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {1, 7},
                 {3, 1},
@@ -340,7 +332,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isTwoPair_44799Test() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 7},
                 {1, 9},
                 {3, 4},
@@ -352,7 +344,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isTwoPair_22JJATest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 11},
                 {1, 2},
                 {3, 2},
@@ -364,7 +356,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isTwoPair_46699Test() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {3, 6},
                 {4, 4},
@@ -376,7 +368,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isOnePair_NotTwoPairTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {1, 9},
                 {3, 6},
@@ -388,7 +380,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isOnePair_NotThreeOfAKindTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {1, 9},
                 {3, 9},
@@ -400,7 +392,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isOnePair_NotFourOfAKindTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {1, 9},
                 {3, 9},
@@ -412,7 +404,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isOnePairTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {3, 14},
                 {1, 9},
@@ -424,7 +416,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isHighCard_notOnePairsTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {1, 9},
                 {3, 14},
@@ -436,7 +428,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isHighCard_notThreeOfAKindTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {1, 9},
                 {3, 9},
@@ -448,7 +440,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isHighCard_notFourOfAKindTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {1, 9},
                 {3, 9},
@@ -460,7 +452,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isHighCard_notFullHouseTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {1, 9},
                 {3, 9},
@@ -472,7 +464,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isHighCard_notStraightTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 10},
                 {1, 14},
                 {3, 11},
@@ -484,7 +476,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isHighCard_notStraightFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 2},
                 {2, 5},
@@ -496,7 +488,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isHighCard_notFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 5},
                 {2, 8},
@@ -508,7 +500,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isHighCardTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 5},
                 {3, 7},
@@ -520,7 +512,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isRoyalFlush_noFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 11},
                 {3, 10},
@@ -532,7 +524,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isRoyalFlush_notTenToAce_notStraightTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 7},
                 {2, 10},
@@ -545,7 +537,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isRoyalFlush_notTenToAce_StraightTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 8},
                 {2, 5},
                 {2, 6},
@@ -557,7 +549,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isRoyalFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 11},
                 {2, 10},
@@ -569,7 +561,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void getPokerRank_RoyalFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 11},
                 {2, 10},
@@ -581,7 +573,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void getPokerRank_StraightFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {2, 11},
                 {2, 10},
@@ -593,7 +585,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void getPokerRank_FourOfAKindTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {3, 11},
                 {4, 11},
@@ -605,7 +597,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void getPokerRank_FullHouseTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {3, 9},
                 {4, 11},
@@ -617,7 +609,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void getPokerRank_FlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {2, 10},
                 {2, 12},
@@ -629,7 +621,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void getPokerRank_StraightTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {2, 10},
                 {1, 12},
@@ -641,7 +633,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void getPokerRank_ThreeOfAKindTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 10},
                 {1, 10},
@@ -653,7 +645,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void getPokerRank_TwoPairsTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 10},
                 {1, 10},
@@ -665,7 +657,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void getPokerRank_OnePairsTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 10},
                 {1, 10},
@@ -677,7 +669,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void getPokerRank_HighCardTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {2, 7},
                 {1, 10},
@@ -689,7 +681,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromRoyalFlush_onePairTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 10},
                 {1, 11},
                 {1, 10},
@@ -702,7 +694,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromRoyalFlush_onePairbutNotFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {1, 9},
                 {1, 11},
                 {2, 11},
@@ -714,7 +706,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromRoyalFlush_onePairbutNotFlush_9To14Test() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {1, 9},
                 {1, 11},
                 {2, 11},
@@ -726,7 +718,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromRoyalFlush_onePair2OddSuits_10To14Test() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {1, 10},
                 {1, 11},
                 {2, 12},
@@ -738,7 +730,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromRoyalFlush_firstIndexIsNotRangeOf11to14Test() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 9},
                 {1, 11},
                 {1, 12},
@@ -750,7 +742,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromRoyalFlush_firstIndexWrongRank_FourthWrongSuitTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {1, 7},
                 {1, 10},
                 {1, 11},
@@ -762,7 +754,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromRoyalFlush_TwoWrongRankOneWrongSuitTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 7},
                 {1, 9},
                 {1, 11},
@@ -774,7 +766,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromFlush_CHHHHTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 10},
                 {1, 11},
                 {1, 9},
@@ -786,7 +778,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromFlush_HHHHSTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {3, 10},
                 {3, 11},
                 {3, 9},
@@ -798,7 +790,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromFullHouse_TwoPairsTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {3, 10},
                 {3, 11},
                 {3, 2},
@@ -811,7 +803,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromFullHouse_ThreeOfAKindTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {3, 10},
                 {3, 11},
                 {3, 2},
@@ -824,7 +816,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraight_OnePairWithAceTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {3, 3},
                 {3, 14},
@@ -836,7 +828,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraight_withAceTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {3, 3},
                 {3, 14},
@@ -848,7 +840,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraight_OnePair_RangeOfFourTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {3, 6},
                 {3, 3},
                 {3, 5},
@@ -860,7 +852,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraight_OnePair_RangeOfThreeTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {3, 3},
                 {3, 4},
@@ -872,7 +864,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraight_TwoPairsTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {3, 3},
                 {3, 10},
@@ -884,7 +876,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraightFlush_OneFromStraightAndOneFromFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 5},
                 {3, 7},
                 {4, 8},
@@ -896,7 +888,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraightFlush_OneFromStraightAndAceWithDiffSuitTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 14},
                 {3, 3},
                 {3, 2},
@@ -908,7 +900,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraightFlushTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 11},
                 {3, 3},
                 {3, 2},
@@ -920,7 +912,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraightFlush_AcePair_SuitWithDDDDHTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 14},
                 {3, 3},
                 {3, 2},
@@ -932,7 +924,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraightFlush_AcePair_SuitWithSSSHSTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 14},
                 {4, 3},
                 {4, 2},
@@ -944,7 +936,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraightFlush_OnePairs_RangeOfFourTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 7},
                 {4, 3},
                 {4, 4},
@@ -956,7 +948,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void oneCardFromStraightFlush_OneFlushAndOneRankWrongTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {4, 2},
                 {4, 3},
                 {4, 4},
@@ -968,7 +960,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isThreeSameSuitTest() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 14},
                 {1, 14},
                 {3, 7},
@@ -980,7 +972,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isThreeInSequenceTest_2XXX8() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 13},
                 {1, 11},
                 {3, 7},
@@ -992,7 +984,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isThreeInSequenceTest_XXX79() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 2},
                 {1, 4},
                 {3, 3},
@@ -1004,7 +996,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isThreeInSequenceTest_35XXX_invalid() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 3},
                 {1, 9},
                 {3, 7},
@@ -1016,7 +1008,7 @@ public class HandCheckerTest {
 
     @org.junit.Test
     public void isThreeInSequenceTest_35XXX_valid() {
-        List<Card> c = createHand(new int[][]{
+        List<Card> c = CardTestHelper.createHand(new int[][]{
                 {2, 3},
                 {1, 9},
                 {3, 7},

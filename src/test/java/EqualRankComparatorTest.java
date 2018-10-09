@@ -11,18 +11,9 @@ public class EqualRankComparatorTest {
         comparator = new EqualRankComparator();
     }
 
-
-    private List<Card> createHand(int[][] cards) {
-        List<Card> hand = new ArrayList<Card>();
-        for (int[] card : cards) {
-            hand.add(new Card(card[0], card[1]));
-        }
-        return hand;
-    }
-
     @org.junit.Test
     public void compareRoyalFlush_AIPWins() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 12},
                 {3, 11},
                 {3, 13},
@@ -30,7 +21,7 @@ public class EqualRankComparatorTest {
                 {3, 10}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {1, 12},
                 {1, 11},
                 {1, 13},
@@ -44,7 +35,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareRoyalFlush_OpponentWins() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 12},
                 {3, 11},
                 {3, 13},
@@ -52,7 +43,7 @@ public class EqualRankComparatorTest {
                 {3, 10}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {1, 12},
                 {1, 11},
                 {1, 13},
@@ -67,7 +58,7 @@ public class EqualRankComparatorTest {
     @org.junit.Test
     public void compareStraightFlush_AIPWinsCompareRank() {
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 6},
                 {3, 7},
                 {3, 8},
@@ -75,7 +66,7 @@ public class EqualRankComparatorTest {
                 {3, 10}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {1, 5},
                 {1, 6},
                 {1, 7},
@@ -91,7 +82,7 @@ public class EqualRankComparatorTest {
     @org.junit.Test
     public void compareStraightFlush_OpponentWinsCompareRank() {
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 6},
                 {3, 7},
                 {3, 8},
@@ -99,7 +90,7 @@ public class EqualRankComparatorTest {
                 {3, 10}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {1, 5},
                 {1, 6},
                 {1, 7},
@@ -115,7 +106,7 @@ public class EqualRankComparatorTest {
     @org.junit.Test
     public void compareStraightFlush_AIPWinsCompareSuit() {
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 6},
                 {3, 7},
                 {3, 8},
@@ -123,7 +114,7 @@ public class EqualRankComparatorTest {
                 {3, 10}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {2, 6},
                 {2, 7},
                 {2, 8},
@@ -139,7 +130,7 @@ public class EqualRankComparatorTest {
     @org.junit.Test
     public void compareStraightFlush_OpponentWinsCompareSuit() {
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 6},
                 {3, 7},
                 {3, 8},
@@ -147,7 +138,7 @@ public class EqualRankComparatorTest {
                 {3, 10}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {2, 6},
                 {2, 7},
                 {2, 8},
@@ -161,7 +152,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareFourOfAKind_AIPWins() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 7},
                 {2, 7},
                 {1, 7},
@@ -169,7 +160,7 @@ public class EqualRankComparatorTest {
                 {3, 10}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 12},
                 {2, 12},
                 {1, 12},
@@ -183,7 +174,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareFourOfAKind_OpponentWins() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 7},
                 {2, 7},
                 {1, 7},
@@ -191,7 +182,7 @@ public class EqualRankComparatorTest {
                 {3, 10}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 12},
                 {2, 12},
                 {1, 12},
@@ -205,7 +196,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareFullHouse_OpponentWins() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 7},
                 {2, 7},
                 {1, 7},
@@ -213,7 +204,7 @@ public class EqualRankComparatorTest {
                 {3, 10}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 12},
                 {2, 12},
                 {1, 12},
@@ -227,7 +218,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareFullHouse_AIPWins() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 7},
                 {2, 7},
                 {1, 7},
@@ -235,7 +226,7 @@ public class EqualRankComparatorTest {
                 {3, 10}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 12},
                 {2, 12},
                 {1, 12},
@@ -249,7 +240,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareThreeOfAKind_OpponentWins() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 7},
                 {2, 7},
                 {1, 7},
@@ -257,7 +248,7 @@ public class EqualRankComparatorTest {
                 {3, 11}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 12},
                 {2, 12},
                 {1, 12},
@@ -271,7 +262,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareThreeOfAKind_AIPWins() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 7},
                 {2, 7},
                 {1, 7},
@@ -279,7 +270,7 @@ public class EqualRankComparatorTest {
                 {3, 11}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 12},
                 {2, 12},
                 {1, 12},
@@ -293,7 +284,7 @@ public class EqualRankComparatorTest {
     @org.junit.Test
     public void compareFlush_CompareWithRecursiveRank_3thRank() {
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 3},
                 {3, 7},
@@ -301,7 +292,7 @@ public class EqualRankComparatorTest {
                 {3, 11}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 2},
                 {1, 3},
                 {1, 6},
@@ -317,7 +308,7 @@ public class EqualRankComparatorTest {
     @org.junit.Test
     public void compareFlush_CompareWithRecursiveRank_2thRank() {
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 4},
                 {3, 6},
@@ -325,7 +316,7 @@ public class EqualRankComparatorTest {
                 {3, 11}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 2},
                 {1, 3},
                 {1, 6},
@@ -340,7 +331,7 @@ public class EqualRankComparatorTest {
     @org.junit.Test
     public void compareFlush_CompareWithRecursiveRank_1thRank() {
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 3},
                 {2, 6},
                 {3, 8},
@@ -348,7 +339,7 @@ public class EqualRankComparatorTest {
                 {3, 11}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 2},
                 {1, 6},
                 {1, 8},
@@ -363,7 +354,7 @@ public class EqualRankComparatorTest {
     @org.junit.Test
     public void compareFlush_CompareWithRecursiveRank_4thRank() {
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 4},
                 {3, 7},
@@ -371,7 +362,7 @@ public class EqualRankComparatorTest {
                 {3, 11}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 2},
                 {1, 3},
                 {1, 6},
@@ -386,7 +377,7 @@ public class EqualRankComparatorTest {
     @org.junit.Test
     public void compareFlush_CompareWithRecursiveRank_5thRank() {
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {4, 2},
                 {3, 3},
                 {4, 7},
@@ -394,7 +385,7 @@ public class EqualRankComparatorTest {
                 {3, 12}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {1, 2},
                 {2, 3},
                 {1, 7},
@@ -410,7 +401,7 @@ public class EqualRankComparatorTest {
     @org.junit.Test
     public void compareFlush_AIPWinsCompareWithSuit() {
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {2, 2},
                 {1, 3},
                 {4, 7},
@@ -418,7 +409,7 @@ public class EqualRankComparatorTest {
                 {3, 11}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {1, 2},
                 {2, 3},
                 {1, 7},
@@ -433,7 +424,7 @@ public class EqualRankComparatorTest {
     @org.junit.Test
     public void compareFlush_OpponentWinsCompareWithSuit() {
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 3},
                 {1, 7},
@@ -441,7 +432,7 @@ public class EqualRankComparatorTest {
                 {3, 11}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {1, 2},
                 {1, 3},
                 {4, 7},
@@ -455,7 +446,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareStraight_AIPWithRank() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 3},
                 {1, 4},
@@ -463,7 +454,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 11},
                 {1, 12},
@@ -478,7 +469,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareStraight_OpponentWithRank() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 3},
                 {1, 4},
@@ -486,7 +477,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 11},
                 {1, 12},
@@ -501,7 +492,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareStraight_AIPWithSuit() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 3},
                 {1, 4},
@@ -509,7 +500,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 2},
                 {3, 3},
                 {1, 4},
@@ -524,7 +515,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareStraight_OpponentWithSuit() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 3},
                 {1, 4},
@@ -532,7 +523,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {4, 2},
                 {3, 3},
                 {1, 4},
@@ -547,7 +538,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareTwoPairs_AIPdiffrentRank() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 2},
                 {1, 14},
@@ -555,7 +546,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 10},
                 {1, 12},
@@ -570,7 +561,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareTwoPairs_OpponentdiffrentRank() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 2},
                 {1, 14},
@@ -578,7 +569,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 10},
                 {1, 12},
@@ -593,7 +584,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareTwoPairs_AIPWithSuit() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 2},
                 {3, 14},
@@ -601,7 +592,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 10},
                 {1, 12},
@@ -616,7 +607,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareTwoPairs_OpponentWithSuit() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 2},
                 {3, 14},
@@ -624,7 +615,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 10},
                 {1, 12},
@@ -639,7 +630,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareOnePair_OpponentWithRank() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {3, 2},
                 {2, 2},
                 {3, 11},
@@ -647,7 +638,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 10},
                 {1, 2},
@@ -662,7 +653,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareOnePair_AIPWithRank() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {2, 2},
                 {3, 2},
                 {3, 11},
@@ -670,7 +661,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 10},
                 {1, 2},
@@ -685,7 +676,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareOnePair_AIPWithSuit() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {2, 12},
                 {1, 12},
                 {3, 11},
@@ -693,7 +684,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {4, 12},
                 {3, 12},
                 {1, 2},
@@ -708,7 +699,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareOnePair_OpponentWithSuit() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {2, 12},
                 {1, 12},
                 {3, 11},
@@ -716,7 +707,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 12},
                 {3, 12},
                 {1, 2},
@@ -732,7 +723,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareHighCard_AIPWithSuit() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {2, 2},
                 {3, 3},
                 {3, 11},
@@ -740,7 +731,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 6},
                 {1, 12},
@@ -755,7 +746,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareHighCard_OpponentWithSuit() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {2, 2},
                 {3, 3},
                 {3, 11},
@@ -763,7 +754,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 6},
                 {1, 12},
@@ -778,7 +769,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareHighCard_AIPWithRank() {
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {2, 2},
                 {3, 3},
                 {3, 11},
@@ -786,7 +777,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 6},
                 {1, 12},
@@ -801,7 +792,7 @@ public class EqualRankComparatorTest {
 
     @org.junit.Test
     public void compareHighCard_OpponentWithRank() {
-        List<Card> c1 = createHand(new int[][]{
+        List<Card> c1 = CardTestHelper.createHand(new int[][]{
                 {2, 2},
                 {3, 3},
                 {3, 11},
@@ -809,7 +800,7 @@ public class EqualRankComparatorTest {
                 {4, 6}
         });
 
-        List<Card> c2 = createHand(new int[][]{
+        List<Card> c2 = CardTestHelper.createHand(new int[][]{
                 {4, 10},
                 {3, 6},
                 {1, 12},

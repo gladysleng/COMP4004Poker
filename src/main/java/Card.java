@@ -1,7 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-public class Card  {
+public class Card {
 
     private int suit;
     private int rank;

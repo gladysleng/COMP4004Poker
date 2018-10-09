@@ -275,7 +275,7 @@ public class HandChecker {
             System.out.println("Flush! ");
             return 6;
         } else if (isStraight(c)) {
-            System.out.println("Straigt! ");
+            System.out.println("Straight! ");
             return 5;
         } else if (isThreeOfAKind(c)) {
             System.out.println("Three of A Kind! ");

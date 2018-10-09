@@ -111,13 +111,13 @@ public class Strategy {
 
         //22234
         if ((c.get(0).getRank() == c.get(2).getRank())) {
-            discardedCard.add(c.remove(3));
             discardedCard.add(c.remove(4));
+            discardedCard.add(c.remove(3));
         }
         //34445
         else if ((c.get(1).getRank() == c.get(3).getRank())) {
+            discardedCard.add(c.remove(c.size()-1));
             discardedCard.add(c.remove(0));
-            discardedCard.add(c.remove(3));
         }
         //56444
         else if ((c.get(2).getRank() == c.get(4).getRank())) {
