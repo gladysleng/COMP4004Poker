@@ -108,7 +108,9 @@ public class Game {
 
             cardsToDiscard = strategy.applyStrategy(aip.getHand(), cardsToExchange);
             if (cardsToDiscard != null) {
-                printDiscardedCard(cardsToDiscard);
+                System.out.println();
+                System.out.print("AIP will discard cards : ");
+                printCardsList(cardsToDiscard);
             }
             printCardsToExchange();
             System.out.println();
@@ -125,9 +127,13 @@ public class Game {
 
     public Player determineWinner() {
         System.out.println();
-        System.out.print("AIP's Rank : ");
+        System.out.print("AIP's card : " );
+        printCardsList(aip.getHand());
+        System.out.print(", Rank : ");
         detectRankOfHand(aip);
-        System.out.print("Opponent's Rank : ");
+        System.out.print("Opponent's card : " );
+        printCardsList(opponent.getHand());
+        System.out.print(", Rank : ");
         detectRankOfHand(opponent);
         System.out.println();
 
@@ -192,9 +198,8 @@ public class Game {
 
     }
 
-    public void printDiscardedCard(List<Card> c) {
-        System.out.println();
-        System.out.print("AIP will discard cards : ");
+    public void printCardsList(List<Card> c) {
+        handChecker.sortHand(c);
         for (int i = 0; i < c.size(); i++) {
             System.out.print(c.get(i).toString() + " ");
         }
@@ -202,6 +207,7 @@ public class Game {
 
     public void printCardsToExchange() {
         System.out.println();
+
         System.out.print("Card received for exchange: ");
         for (int i = 0; i < cardsToExchange.size(); i++) {
             System.out.print(cardsToExchange.get(i).toString() + " ");

@@ -257,5 +257,76 @@ public class GameTest {
         assertEquals(expectedOutput,g.getAip().getHand());
     }
 
+    @org.junit.Test
+    public void runThreeCardsInSequence_exchangeTwoCardsTest() {
+        String gameLine = "D5 C6 C7 HQ DK C6 C3 C5 H5 S7 H9 SK";
+        storeAIPInitialHand(gameLine);
+
+        List<Card> expectedOutput = createExpectedHand(new Card[]{
+                g.getAip().getHand().get(1),
+                g.getAip().getHand().get(0),
+                g.getAip().getHand().get(2),
+                g.getCardsToExchange().get(1),
+                g.getCardsToExchange().get(0)
+        });
+
+        g.playRound(gameLine);
+        h.sortHand(expectedOutput);
+        assertEquals(expectedOutput,g.getAip().getHand());
+    }
+
+    @org.junit.Test
+    public void runTwoDistinctPair_changeOneCardTest() {
+        String gameLine = "H7 D3 C7 HK DK C6 C3 C5 H5 S7 SK";
+        storeAIPInitialHand(gameLine);
+
+        List<Card> expectedOutput = createExpectedHand(new Card[]{
+                g.getAip().getHand().get(3),
+                g.getAip().getHand().get(0),
+                g.getAip().getHand().get(2),
+                g.getAip().getHand().get(4),
+                g.getCardsToExchange().get(0)
+        });
+
+        g.playRound(gameLine);
+        h.sortHand(expectedOutput);
+        assertEquals(expectedOutput,g.getAip().getHand());
+    }
+
+    @org.junit.Test
+    public void runASinglePair_changeThreeCardTest() {
+        String gameLine = "H7 D2 C7 H5 DK S7 S3 S4 S6 C8 H2 H4 HK";
+        storeAIPInitialHand(gameLine);
+
+        List<Card> expectedOutput = createExpectedHand(new Card[]{
+                g.getAip().getHand().get(0),
+                g.getAip().getHand().get(2),
+                g.getCardsToExchange().get(1),
+                g.getCardsToExchange().get(2),
+                g.getCardsToExchange().get(0)
+        });
+
+        g.playRound(gameLine);
+        h.sortHand(expectedOutput);
+        assertEquals(expectedOutput,g.getAip().getHand());
+    }
+
+    @org.junit.Test
+    public void runTwoHighestCard_changeThreeCardTest() {
+        String gameLine = "H3 H8 C10 D4 SQ S7 S3 S4 S6 C8 S8 CK D2";
+        storeAIPInitialHand(gameLine);
+
+        List<Card> expectedOutput = createExpectedHand(new Card[]{
+                g.getAip().getHand().get(4),
+                g.getAip().getHand().get(2),
+                g.getCardsToExchange().get(1),
+                g.getCardsToExchange().get(2),
+                g.getCardsToExchange().get(0)
+        });
+
+        g.playRound(gameLine);
+        h.sortHand(expectedOutput);
+        assertEquals(expectedOutput,g.getAip().getHand());
+    }
 
 }
