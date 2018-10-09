@@ -12,7 +12,7 @@ public class Strategy {
         List<Card> discardedCard = new ArrayList<Card>();
         // pairs lower suit
         if (c.get(0).getSuit() != c.get(2).getSuit()) {
-           discardedCard.add( c.remove(0));
+            discardedCard.add(c.remove(0));
         }
         //pairs higher suit
         else if (c.get(c.size() - 1).getSuit() != c.get(2).getSuit()) {
@@ -50,7 +50,7 @@ public class Strategy {
 
     }
 
-    private int returnRankForNumberOfCards(List<Card>c, int numOfSpecificCardInList) {
+    private int returnRankForNumberOfCards(List<Card> c, int numOfSpecificCardInList) {
 
         int requestedRank = 0;
         HashMap<Integer, Integer> rankBucket = new HashMap<Integer, Integer>();
@@ -71,6 +71,7 @@ public class Strategy {
         }
         return requestedRank;
     }
+
     //test for this is covered for change one card for fullHouse in the twoPairs if statement
     public List<Card> changeOneCardForTwoPairs(List<Card> c, List<Card> cardsToChange) {
         int rankWithoutPairs = returnRankForNumberOfCards(c, 1);
@@ -94,7 +95,7 @@ public class Strategy {
 
         } else {
 
-            discardedCard = changeTwoCardsForThreeOfAKind(c,cardsToChange);
+            discardedCard = changeTwoCardsForThreeOfAKind(c, cardsToChange);
 
         }
         handChecker.sortHand(c);
@@ -186,7 +187,7 @@ public class Strategy {
         }
         //DCSSS
         else if ((c.get(2).getSuit() == c.get(4).getSuit())) {
-            discardedCard.add( c.remove(0));
+            discardedCard.add(c.remove(0));
             discardedCard.add(c.remove(0));
         }
         c.addAll(cardsToChange);
@@ -228,15 +229,13 @@ public class Strategy {
         List<Card> discardedCard = new ArrayList<Card>();
         handChecker.sortHand(c);
 
-        if(c.get(0).getRank() == c.get(1).getRank()-1 && c.get(0).getRank() == c.get(2).getRank()-2){
-            discardedCard.add(c.remove(c.size()-1));
-            discardedCard.add(c.remove(c.size()-1));
-        }
-        else if(c.get(1).getRank() == c.get(2).getRank()-1 && c.get(1).getRank() == c.get(3).getRank()-2){
+        if (c.get(0).getRank() == c.get(1).getRank() - 1 && c.get(0).getRank() == c.get(2).getRank() - 2) {
+            discardedCard.add(c.remove(c.size() - 1));
+            discardedCard.add(c.remove(c.size() - 1));
+        } else if (c.get(1).getRank() == c.get(2).getRank() - 1 && c.get(1).getRank() == c.get(3).getRank() - 2) {
             discardedCard.add(c.remove(0));
-            discardedCard.add(c.remove(c.size()-1));
-        }
-        else if(c.get(2).getRank() == c.get(3).getRank()-1 && c.get(2).getRank() == c.get(4).getRank()-2){
+            discardedCard.add(c.remove(c.size() - 1));
+        } else if (c.get(2).getRank() == c.get(3).getRank() - 1 && c.get(2).getRank() == c.get(4).getRank() - 2) {
             discardedCard.add(c.remove(0));
             discardedCard.add(c.remove(0));
         }
@@ -247,47 +246,40 @@ public class Strategy {
         return discardedCard;
     }
 
-    public void applyStrategy(List<Card> c, List<Card> cardsToChange){
-        if(handChecker.oneCardFromRoyalFlush(c)){
-            System.out.println("AIP is one card away from Royal Flush, exchange one card ");
-            changeOneCardForRoyalFlush(c,cardsToChange);
-        }
-        else if(handChecker.oneCardFromStraightFlush(c)){
-            System.out.println("AIP is one card away from Straight Flush, exchange one card ");
-            changeOneCardForStraightFlush(c, cardsToChange);
-        }
-        else if(handChecker.oneCardFromFlush(c)){
-            System.out.println("AIP is one card away from Flush, exchange one card ");
-            changeOneCardForFlush(c, cardsToChange);
-        }
-        else if(handChecker.oneCardFromStraight(c)){
-            System.out.println("AIP is one card away from Straight, exchange one card ");
-            changeOneCardForStraight(c, cardsToChange);
-        }
-        else if(handChecker.isThreeOfSameSuit(c)){
-            System.out.println("AIP has three of the same suit, exchange two card ");
-            changeTwoCardsForThreeSameSuit(c, cardsToChange);
-        }
-        else if(handChecker.isThreeOfAKind(c)){
-            System.out.println("AIP has three of a same rank, exchange two card ");
-            changeTwoCardsForThreeOfAKind(c, cardsToChange);
-        }
-        else if(handChecker.isThreeInSequence(c)){
-            System.out.println("AIP has three cards in sequence, exchange two card ");
-            changeTwoCardsForThreeInSequence(c, cardsToChange);
-        }
-        else if(handChecker.isTwoPair(c)){
-            System.out.println("AIP has two pairs, exchange one card ");
-            changeOneCardForTwoPairs(c, cardsToChange);
-        }
-        else if(handChecker.isOnePair(c)){
-            System.out.println("AIP has one pair, exchange three card ");
-            changeThreeCardsForOnePair(c, cardsToChange);
-        }
-        else if(handChecker.isHighCard(c)){
-            System.out.println("AIP has high card, exchange the 3 lowest card ");
-            changeThreeCardsForHighCards(c, cardsToChange);
-        }
+    public List<Card> applyStrategy(List<Card> c, List<Card> cardsToChange) {
 
+        if (handChecker.oneCardFromRoyalFlush(c)) {
+            System.out.println("AIP is one card away from Royal Flush, exchange one card ");
+            return changeOneCardForRoyalFlush(c, cardsToChange);
+
+        } else if (handChecker.oneCardFromStraightFlush(c)) {
+            System.out.println("AIP is one card away from Straight Flush, exchange one card ");
+            return changeOneCardForStraightFlush(c, cardsToChange);
+        } else if (handChecker.oneCardFromFlush(c)) {
+            System.out.println("AIP is one card away from Flush, exchange one card ");
+            return changeOneCardForFlush(c, cardsToChange);
+        } else if (handChecker.oneCardFromStraight(c)) {
+            System.out.println("AIP is one card away from Straight, exchange one card ");
+            return changeOneCardForStraight(c, cardsToChange);
+        } else if (handChecker.isThreeOfSameSuit(c)) {
+            System.out.println("AIP has three of the same suit, exchange two card ");
+            return changeTwoCardsForThreeSameSuit(c, cardsToChange);
+        } else if (handChecker.isThreeOfAKind(c)) {
+            System.out.println("AIP has three of a same rank, exchange two card ");
+            return changeTwoCardsForThreeOfAKind(c, cardsToChange);
+        } else if (handChecker.isThreeInSequence(c)) {
+            System.out.println("AIP has three cards in sequence, exchange two card ");
+            return changeTwoCardsForThreeInSequence(c, cardsToChange);
+        } else if (handChecker.isTwoPair(c)) {
+            System.out.println("AIP has two pairs, exchange one card ");
+            return changeOneCardForTwoPairs(c, cardsToChange);
+        } else if (handChecker.isOnePair(c)) {
+            System.out.println("AIP has one pair, exchange three card ");
+            return changeThreeCardsForOnePair(c, cardsToChange);
+        } else if (handChecker.isHighCard(c)) {
+            System.out.println("AIP has high card, exchange the 3 lowest card ");
+            return changeThreeCardsForHighCards(c, cardsToChange);
+        }
+        return null;
     }
 }

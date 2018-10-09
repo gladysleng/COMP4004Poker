@@ -9,16 +9,30 @@ import java.util.Arrays;
 
 public class Game {
 
+    public Player getAip() {
+        return aip;
+    }
+
+    public Player getOpponent() {
+        return opponent;
+    }
+
     private Player aip, opponent;
     private Strategy strategy;
     private HandChecker handChecker;
     private EqualRankComparator equalRankcomparator;
     private ReadFile reader;
-    private List<Card> cardsToExchange;
 
-    //Temporarily for input files
-    String handString = "DA C3 C5 C2 C6";
-    String handString2 = "DK C10 H5 DJ H3";
+    public List<Card> getCardsToExchange() {
+        return cardsToExchange;
+    }
+
+    public List<Card> getCardsToDiscard() {
+        return cardsToDiscard;
+    }
+
+    private List<Card> cardsToExchange;
+    private List<Card> cardsToDiscard;
 
     public Game() {
 
@@ -68,34 +82,48 @@ public class Game {
                 break;
             }
             System.out.println();
-            System.out.println("---------------------------------");
-            System.out.println("Game " + ++gameCounter + "!!");
-            System.out.println("---------------------------------");
+            System.out.println("-----------------------------------------------------------------");
+            System.out.println("                            Game " + ++gameCounter + "!!");
+            System.out.println("-----------------------------------------------------------------");
 
             setUpForInitialHands(gameLine);
-
-            System.out.print("Rank of AIP : ");
-            detectRankOfHand(aip);
-            System.out.println();
-            if (aip.getHandRank() < 5) {
-                System.out.println("AIP will exchange card to improve its rank! ");
-                strategy.applyStrategy(aip.getHand(), cardsToExchange);
-                System.out.println();
-                System.out.println("AFTER CARD EXCHANGE : ");
-
-                aip.printHand();
+            Player winner = playRound(gameLine);
+            if (winner == aip) {
+                System.out.println("AIP Wins!");
+            } else {
+                System.out.println("Opponent Wins!");
             }
-            else{
-                System.out.println("AIP did not exchange any of its card");
-                aip.getHandRank();
-                aip.printHand();
-            }
-            determineWinner();
-
         }
     }
 
-    public void determineWinner() {
+
+    public Player playRound(String gameLine) {
+        cardsToDiscard = new ArrayList<Card>();
+
+        System.out.print("Rank of AIP : ");
+        detectRankOfHand(aip);
+        System.out.println();
+        if (aip.getHandRank() < 5) {
+            System.out.println("AIP will exchange card to improve its rank! ");
+
+            cardsToDiscard = strategy.applyStrategy(aip.getHand(), cardsToExchange);
+            if (cardsToDiscard != null) {
+                printDiscardedCard(cardsToDiscard);
+            }
+            printCardsToExchange();
+            System.out.println();
+            System.out.println();
+            System.out.println("AIP'S HAND AFTER CARD EXCHANGE : ");
+            aip.printHand();
+        } else {
+            System.out.println("AIP did not exchange any of its card");
+            aip.getHandRank();
+            aip.printHand();
+        }
+        return determineWinner();
+    }
+
+    public Player determineWinner() {
         System.out.println();
         System.out.print("AIP's Rank : ");
         detectRankOfHand(aip);
@@ -104,17 +132,16 @@ public class Game {
         System.out.println();
 
         if (aip.getHandRank() == opponent.getHandRank()) {
-            int winner = compareTwoEqualRank(aip.getHand(),opponent.getHand());
-            if(winner == 1){
-                System.out.println("AIP Wins!");
-            }
-            else{
-                System.out.println("Opponent Wins!");
+            int winner = compareTwoEqualRank(aip.getHand(), opponent.getHand());
+            if (winner == 1) {
+                return aip;
+            } else {
+                return opponent;
             }
         } else if (aip.getHandRank() > opponent.getHandRank()) {
-            System.out.println("AIP Wins!");
+            return aip;
         } else {
-            System.out.println("Opponent Wins!");
+            return opponent;
         }
     }
 
@@ -166,13 +193,26 @@ public class Game {
     }
 
     public void printDiscardedCard(List<Card> c) {
+        System.out.println();
+        System.out.print("AIP will discard cards : ");
         for (int i = 0; i < c.size(); i++) {
-            c.get(i).toString();
+            System.out.print(c.get(i).toString() + " ");
         }
+    }
+
+    public void printCardsToExchange() {
+        System.out.println();
+        System.out.print("Card received for exchange: ");
+        for (int i = 0; i < cardsToExchange.size(); i++) {
+            System.out.print(cardsToExchange.get(i).toString() + " ");
+        }
+
     }
 
     public static void main(String[] args) {
         Game poker = new Game();
         poker.run();
     }
+
+
 }

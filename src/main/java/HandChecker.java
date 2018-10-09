@@ -251,9 +251,7 @@ public class HandChecker {
                     && (c.get(3).getRank() == 13)
                     && (c.get(4).getRank() == 14);
 
-
             return (t && isFlush(c));
-
 
         }
         return false;
