@@ -260,34 +260,34 @@ public class HandChecker {
 
     public int getPokerRank(List<Card> c) {
         if (isRoyalFlush(c)) {
-            System.out.println("Royal Flush! ");
+            System.out.println("Royal Flush!");
             return 10;
         } else if (isStraightFlush(c)) {
-            System.out.println("Straight FLush! ");
+            System.out.println("Straight FLush!");
             return 9;
         } else if (isFourOfAKind(c)) {
-            System.out.println("Four of A Kind! ");
+            System.out.println("Four of A Kind!");
             return 8;
         } else if (isFullHouse(c)) {
-            System.out.println("Full House! ");
+            System.out.println("Full House!");
             return 7;
         } else if (isFlush(c)) {
-            System.out.println("Flush! ");
+            System.out.println("Flush!");
             return 6;
         } else if (isStraight(c)) {
-            System.out.println("Straight! ");
+            System.out.println("Straight!");
             return 5;
         } else if (isThreeOfAKind(c)) {
-            System.out.println("Three of A Kind! ");
+            System.out.println("Three of A Kind!");
             return 4;
         } else if (isTwoPair(c)) {
-            System.out.println("Two Pairs! ");
+            System.out.println("Two Pairs!");
             return 3;
         } else if (isOnePair(c)) {
-            System.out.println("One Pair! ");
+            System.out.println("One Pair!");
             return 2;
         } else if (isHighCard(c)) {
-            System.out.println("High Card! ");
+            System.out.println("High Card!");
             return 1;
         } else {
             return 0;

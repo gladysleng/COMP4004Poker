@@ -13,23 +13,12 @@ public class Game {
         return aip;
     }
 
-    public Player getOpponent() {
-        return opponent;
-    }
 
     private Player aip, opponent;
     private Strategy strategy;
     private HandChecker handChecker;
     private EqualRankComparator equalRankcomparator;
     private ReadFile reader;
-
-    public List<Card> getCardsToExchange() {
-        return cardsToExchange;
-    }
-
-    public List<Card> getCardsToDiscard() {
-        return cardsToDiscard;
-    }
 
     private List<Card> cardsToExchange;
     private List<Card> cardsToDiscard;
@@ -59,7 +48,7 @@ public class Game {
         String[] opponentCardsStrings = Arrays.copyOfRange(lineCardStrings, 5, 10);
         String[] cardToExchangeStrings = Arrays.copyOfRange(lineCardStrings, 10, lineCardStrings.length);
 
-        System.out.println("INITIAL HANDS:  ");
+        System.out.println("INITIAL HANDS:");
 
         opponent.setHand(createHandsFromStringArray(opponentCardsStrings));
         opponent.printHand();
@@ -87,24 +76,20 @@ public class Game {
             System.out.println("-----------------------------------------------------------------");
 
             setUpForInitialHands(gameLine);
-            Player winner = playRound(gameLine);
-            if (winner == aip) {
-                System.out.println("AIP Wins!");
-            } else {
-                System.out.println("Opponent Wins!");
-            }
+            playRound(gameLine);
+
         }
     }
 
 
-    public Player playRound(String gameLine) {
+    public void playRound(String gameLine) {
         cardsToDiscard = new ArrayList<Card>();
 
         System.out.print("Rank of AIP : ");
         detectRankOfHand(aip);
         System.out.println();
         if (aip.getHandRank() < 5) {
-            System.out.println("AIP will exchange card to improve its rank! ");
+            System.out.println("AIP will exchange card to improve its rank!");
 
             cardsToDiscard = strategy.applyStrategy(aip.getHand(), cardsToExchange);
             if (cardsToDiscard != null) {
@@ -115,17 +100,17 @@ public class Game {
             printCardsToExchange();
             System.out.println();
             System.out.println();
-            System.out.println("AIP'S HAND AFTER CARD EXCHANGE : ");
+            System.out.println("AIP'S HAND AFTER CARD EXCHANGE :");
             aip.printHand();
         } else {
             System.out.println("AIP did not exchange any of its card");
             aip.getHandRank();
             aip.printHand();
         }
-        return determineWinner();
+        determineWinner();
     }
 
-    public Player determineWinner() {
+    public void determineWinner() {
         System.out.println();
         System.out.print("AIP's card : " );
         printCardsList(aip.getHand());
@@ -140,14 +125,14 @@ public class Game {
         if (aip.getHandRank() == opponent.getHandRank()) {
             int winner = compareTwoEqualRank(aip.getHand(), opponent.getHand());
             if (winner == 1) {
-                return aip;
+                System.out.println("AIP Wins!");
             } else {
-                return opponent;
+                System.out.println("Opponent Wins!");
             }
         } else if (aip.getHandRank() > opponent.getHandRank()) {
-            return aip;
+            System.out.println("AIP Wins!");
         } else {
-            return opponent;
+            System.out.println("Opponent Wins!");
         }
     }
 
@@ -200,24 +185,50 @@ public class Game {
 
     public void printCardsList(List<Card> c) {
         handChecker.sortHand(c);
+        String cardString = "";
         for (int i = 0; i < c.size(); i++) {
-            System.out.print(c.get(i).toString() + " ");
+            cardString += c.get(i).toString() + " ";
         }
+        System.out.print(cardString.trim());
     }
 
     public void printCardsToExchange() {
         System.out.println();
 
         System.out.print("Card received for exchange: ");
+        String cardString = "";
         for (int i = 0; i < cardsToExchange.size(); i++) {
-            System.out.print(cardsToExchange.get(i).toString() + " ");
+            cardString += cardsToExchange.get(i).toString() + " ";
         }
+        System.out.print(cardString.trim());
 
+    }
+
+    private List<String> readFile(String path) {
+        List<String> stringCardLines = new ArrayList<String>();
+        String output = "";
+        try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            java.io.File file = new java.io.File(classLoader.getResource(path).getFile());
+            java.io.FileReader fileReader = new java.io.FileReader(file);
+            java.io.BufferedReader bufferedReader = new java.io.BufferedReader(fileReader);
+
+            String currentLine;
+
+            int i = 0 ;
+            while ((currentLine = bufferedReader.readLine()) != null) {
+                stringCardLines.add(currentLine);
+            }
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
+        return stringCardLines;
     }
 
     public static void main(String[] args) {
         Game poker = new Game();
         poker.run();
+
     }
 
 

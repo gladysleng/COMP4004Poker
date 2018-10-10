@@ -1,0 +1,1268 @@
+
+-----------------------------------------------------------------
+                            Game 1!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H9 H10 HJ HQ HK
+AIP  : SA SJ SQ SK S10
+Rank of AIP : Royal Flush!
+
+AIP did not exchange any of its card
+AIP  : S10 SJ SQ SK SA
+
+AIP's card : S10 SJ SQ SK SA, Rank : Royal Flush!
+Opponent's card : H9 H10 HJ HQ HK, Rank : Straight FLush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 2!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : SA SJ SQ SK S10
+AIP  : H9 H10 HJ HQ HK
+Rank of AIP : Straight FLush!
+
+AIP did not exchange any of its card
+AIP  : H9 H10 HJ HQ HK
+
+AIP's card : H9 H10 HJ HQ HK, Rank : Straight FLush!
+Opponent's card : S10 SJ SQ SK SA, Rank : Royal Flush!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 3!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H3 H5 H7 H9 H2
+AIP  : C9 H9 S9 D9 H8
+Rank of AIP : Four of A Kind!
+
+AIP did not exchange any of its card
+AIP  : H8 D9 C9 H9 S9
+
+AIP's card : H8 D9 C9 H9 S9, Rank : Four of A Kind!
+Opponent's card : H2 H3 H5 H7 H9, Rank : Flush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 4!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : SK H7 DK D7 C7
+AIP  : H8 H9 D8 C8 D9
+Rank of AIP : Full House!
+
+AIP did not exchange any of its card
+AIP  : D8 C8 H8 D9 H9
+
+AIP's card : D8 C8 H8 D9 H9, Rank : Full House!
+Opponent's card : D7 C7 H7 DK SK, Rank : Full House!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 5!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H8 D7 S9 CJ S10
+AIP  : H7 H4 H10 H3 HJ
+Rank of AIP : Flush!
+
+AIP did not exchange any of its card
+AIP  : H3 H4 H7 H10 HJ
+
+AIP's card : H3 H4 H7 H10 HJ, Rank : Flush!
+Opponent's card : D7 H8 S9 S10 CJ, Rank : Straight!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 6!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H4 D5 C4 S4 H2
+AIP  : S5 S6 D7 C8 D9
+Rank of AIP : Straight!
+
+AIP did not exchange any of its card
+AIP  : S5 S6 D7 C8 D9
+
+AIP's card : S5 S6 D7 C8 D9, Rank : Straight!
+Opponent's card : H2 C4 H4 S4 D5, Rank : Three of A Kind!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 7!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : S5 S6 D7 C8 D9
+AIP  : C9 DQ DJ DK DA
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Royal Flush, exchange one card
+
+AIP will discard cards : C9
+Card received for exchange: D10
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : D10 DJ DQ DK DA
+
+AIP's card : D10 DJ DQ DK DA, Rank : Royal Flush!
+Opponent's card : S5 S6 D7 C8 D9, Rank : Straight!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 8!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H7 H4 H10 H3 HJ
+AIP  : CJ CK C10 H10 CA
+Rank of AIP : One Pair!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Royal Flush, exchange one card
+
+AIP will discard cards : H10
+Card received for exchange: HK
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : C10 CJ CK HK CA
+
+AIP's card : C10 CJ CK HK CA, Rank : One Pair!
+Opponent's card : H3 H4 H7 H10 HJ, Rank : Flush!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 9!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H8 H9 D8 C8 D9
+AIP  : SA H3 H2 H4 HA
+Rank of AIP : One Pair!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Straight Flush, exchange one card
+
+AIP will discard cards : SA
+Card received for exchange: H5
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : HA H2 H3 H4 H5
+
+AIP's card : HA H2 H3 H4 H5, Rank : Straight FLush!
+Opponent's card : D8 C8 H8 D9 H9, Rank : Full House!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 10!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H8 H9 D8 C8 D9
+AIP  : S7 S3 S4 S6 H7
+Rank of AIP : One Pair!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Royal Flush, exchange one card
+
+AIP will discard cards : H7
+Card received for exchange: S5
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S3 S4 S5 S6 S7
+
+AIP's card : S3 S4 S5 S6 S7, Rank : Straight FLush!
+Opponent's card : D8 C8 H8 D9 H9, Rank : Full House!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 11!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : SK H7 DK D7 C7
+AIP  : H3 H5 C9 HJ HQ
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Flush, exchange one card
+
+AIP will discard cards : C9
+Card received for exchange: CJ
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : H3 H5 CJ HJ HQ
+
+AIP's card : H3 H5 CJ HJ HQ, Rank : One Pair!
+Opponent's card : D7 C7 H7 DK SK, Rank : Full House!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 12!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H8 H9 D8 C8 D9
+AIP  : C6 C3 C5 H5 S7
+Rank of AIP : One Pair!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Straight, exchange one card
+
+AIP will discard cards : C5
+Card received for exchange: H4
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : C3 H4 H5 C6 S7
+
+AIP's card : C3 H4 H5 C6 S7, Rank : Straight!
+Opponent's card : D8 C8 H8 D9 H9, Rank : Full House!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 13!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H8 H9 D8 C8 D9
+AIP  : C2 C3 C4 H2 S5
+Rank of AIP : One Pair!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Straight, exchange one card
+
+AIP will discard cards : C2
+Card received for exchange: H5
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : H2 C3 C4 H5 S5
+
+AIP's card : H2 C3 C4 H5 S5, Rank : One Pair!
+Opponent's card : D8 C8 H8 D9 H9, Rank : Full House!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 14!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C6 C3 C5 H5 S7
+AIP  : C4 C7 C9 H3 DJ
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP has three of the same suit, exchange two card
+
+AIP will discard cards : H3 DJ
+Card received for exchange: H9 H4
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : C4 H4 C7 C9 H9
+
+AIP's card : C4 H4 C7 C9 H9, Rank : Two Pairs!
+Opponent's card : C3 C5 H5 C6 S7, Rank : One Pair!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 15!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C6 C3 C5 H5 S7
+AIP  : D7 C7 C9 H7 DK
+Rank of AIP : Three of A Kind!
+
+AIP will exchange card to improve its rank!
+AIP has three of a same rank, exchange two card
+
+AIP will discard cards : C9 DK
+Card received for exchange: H9 SK
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : D7 C7 H7 H9 SK
+
+AIP's card : D7 C7 H7 H9 SK, Rank : Three of A Kind!
+Opponent's card : C3 C5 H5 C6 S7, Rank : One Pair!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 16!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C6 C3 C5 H5 S7
+AIP  : D5 C6 C7 HQ DK
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP has three cards in sequence, exchange two card
+
+AIP will discard cards : HQ DK
+Card received for exchange: H9 SK
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : D5 C6 C7 H9 SK
+
+AIP's card : D5 C6 C7 H9 SK, Rank : High Card!
+Opponent's card : C3 C5 H5 C6 S7, Rank : One Pair!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 17!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C6 C3 C5 H5 S7
+AIP  : H7 D2 C7 HK DK
+Rank of AIP : Two Pairs!
+
+AIP will exchange card to improve its rank!
+AIP has two pairs, exchange one card
+
+AIP will discard cards : D2
+Card received for exchange: SK
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : C7 H7 DK HK SK
+
+AIP's card : C7 H7 DK HK SK, Rank : Full House!
+Opponent's card : C3 C5 H5 C6 S7, Rank : One Pair!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 18!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : S7 S3 S4 S6 C8
+AIP  : H7 D2 C7 H5 DK
+Rank of AIP : One Pair!
+
+AIP will exchange card to improve its rank!
+AIP has one pair, exchange three card
+
+AIP will discard cards : D2 H5 DK
+Card received for exchange: H2 H4 HK
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : H2 H4 C7 H7 HK
+
+AIP's card : H2 H4 C7 H7 HK, Rank : One Pair!
+Opponent's card : S3 S4 S6 S7 C8, Rank : High Card!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 19!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : S7 S3 S4 S6 C8
+AIP  : H3 H8 C10 D4 SQ
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP has high card, exchange the 3 lowest card
+
+AIP will discard cards : H3 D4 H8
+Card received for exchange: S8 CK D2
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : D2 S8 C10 SQ CK
+
+AIP's card : D2 S8 C10 SQ CK, Rank : High Card!
+Opponent's card : S3 S4 S6 S7 C8, Rank : High Card!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 20!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H9 HJ HQ HK H10
+AIP  : S10 SK SQ SJ SA
+Rank of AIP : Royal Flush!
+
+AIP did not exchange any of its card
+AIP  : S10 SJ SQ SK SA
+
+AIP's card : S10 SJ SQ SK SA, Rank : Royal Flush!
+Opponent's card : H9 H10 HJ HQ HK, Rank : Straight FLush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 21!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : HK HJ HQ H10 HA
+AIP  : S9 S10 SK SQ SJ
+Rank of AIP : Straight FLush!
+
+AIP did not exchange any of its card
+AIP  : S9 S10 SJ SQ SK
+
+AIP's card : S9 S10 SJ SQ SK, Rank : Straight FLush!
+Opponent's card : H10 HJ HQ HK HA, Rank : Royal Flush!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 22!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : HK H4 C4 D4 S4
+AIP  : S9 S10 SK SQ SJ
+Rank of AIP : Straight FLush!
+
+AIP did not exchange any of its card
+AIP  : S9 S10 SJ SQ SK
+
+AIP's card : S9 S10 SJ SQ SK, Rank : Straight FLush!
+Opponent's card : D4 C4 H4 S4 HK, Rank : Four of A Kind!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 23!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D8 D3 D9 D10 D5
+AIP  : HK H4 C4 D4 S4
+Rank of AIP : Four of A Kind!
+
+AIP did not exchange any of its card
+AIP  : D4 C4 H4 S4 HK
+
+AIP's card : D4 C4 H4 S4 HK, Rank : Four of A Kind!
+Opponent's card : D3 D5 D8 D9 D10, Rank : Flush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 24!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : S10 SK SQ SJ SA
+AIP  : HK H4 C4 D4 S4
+Rank of AIP : Four of A Kind!
+
+AIP did not exchange any of its card
+AIP  : D4 C4 H4 S4 HK
+
+AIP's card : D4 C4 H4 S4 HK, Rank : Four of A Kind!
+Opponent's card : S10 SJ SQ SK SA, Rank : Royal Flush!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 25!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : S9 S10 SK SQ SJ
+AIP  : HK H4 C4 D4 S4
+Rank of AIP : Four of A Kind!
+
+AIP did not exchange any of its card
+AIP  : D4 C4 H4 S4 HK
+
+AIP's card : D4 C4 H4 S4 HK, Rank : Four of A Kind!
+Opponent's card : S9 S10 SJ SQ SK, Rank : Straight FLush!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 26!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D8 D5 D10 DA DJ
+AIP  : CJ HJ SJ HK SK
+Rank of AIP : Full House!
+
+AIP did not exchange any of its card
+AIP  : CJ HJ SJ HK SK
+
+AIP's card : CJ HJ SJ HK SK, Rank : Full House!
+Opponent's card : D5 D8 D10 DJ DA, Rank : Flush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 27!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : CQ DQ HQ SQ D10
+AIP  : CJ HJ SJ HK SK
+Rank of AIP : Full House!
+
+AIP did not exchange any of its card
+AIP  : CJ HJ SJ HK SK
+
+AIP's card : CJ HJ SJ HK SK, Rank : Full House!
+Opponent's card : D10 DQ CQ HQ SQ, Rank : Four of A Kind!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 28!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D9 D10 DK DQ DJ
+AIP  : CJ HJ SJ HK SK
+Rank of AIP : Full House!
+
+AIP did not exchange any of its card
+AIP  : CJ HJ SJ HK SK
+
+AIP's card : CJ HJ SJ HK SK, Rank : Full House!
+Opponent's card : D9 D10 DJ DQ DK, Rank : Straight FLush!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 29!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : DA DJ D10 DQ DK
+AIP  : CJ HJ SJ HK SK
+Rank of AIP : Full House!
+
+AIP did not exchange any of its card
+AIP  : CJ HJ SJ HK SK
+
+AIP's card : CJ HJ SJ HK SK, Rank : Full House!
+Opponent's card : D10 DJ DQ DK DA, Rank : Royal Flush!
+
+Opponent Wins!
+
+-----------------------------------------------------------------
+                            Game 30!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C5 H6 H8 S7 C9
+AIP  : D5 D8 DJ D10 DA
+Rank of AIP : Flush!
+
+AIP did not exchange any of its card
+AIP  : D5 D8 D10 DJ DA
+
+AIP's card : D5 D8 D10 DJ DA, Rank : Flush!
+Opponent's card : C5 H6 S7 H8 C9, Rank : Straight!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 31!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D6 C2 D10 C10 H10
+AIP  : D5 D8 DJ D10 DA
+Rank of AIP : Flush!
+
+AIP did not exchange any of its card
+AIP  : D5 D8 D10 DJ DA
+
+AIP's card : D5 D8 D10 DJ DA, Rank : Flush!
+Opponent's card : C2 D6 D10 C10 H10, Rank : Three of A Kind!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 32!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : S4 S7 H7 SJ CJ
+AIP  : D5 D8 D10 DJ DA
+Rank of AIP : Flush!
+
+AIP did not exchange any of its card
+AIP  : D5 D8 D10 DJ DA
+
+AIP's card : D5 D8 D10 DJ DA, Rank : Flush!
+Opponent's card : S4 H7 S7 CJ SJ, Rank : Two Pairs!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 33!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C5 S8 S9 DK CK
+AIP  : D5 D8 DJ D10 DA
+Rank of AIP : Flush!
+
+AIP did not exchange any of its card
+AIP  : D5 D8 D10 DJ DA
+
+AIP's card : D5 D8 D10 DJ DA, Rank : Flush!
+Opponent's card : C5 S8 S9 DK CK, Rank : One Pair!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 34!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D2 C3 S8 DQ SA
+AIP  : D5 D8 DJ D10 DA
+Rank of AIP : Flush!
+
+AIP did not exchange any of its card
+AIP  : D5 D8 D10 DJ DA
+
+AIP's card : D5 D8 D10 DJ DA, Rank : Flush!
+Opponent's card : D2 C3 S8 DQ SA, Rank : High Card!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 35!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D6 C2 D10 C10 H10
+AIP  : D7 S8 C5 H6 C9
+Rank of AIP : Straight!
+
+AIP did not exchange any of its card
+AIP  : C5 H6 D7 S8 C9
+
+AIP's card : C5 H6 D7 S8 C9, Rank : Straight!
+Opponent's card : C2 D6 D10 C10 H10, Rank : Three of A Kind!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 36!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : S9 S7 H7 DJ CJ
+AIP  : D7 S8 C5 H6 C9
+Rank of AIP : Straight!
+
+AIP did not exchange any of its card
+AIP  : C5 H6 D7 S8 C9
+
+AIP's card : C5 H6 D7 S8 C9, Rank : Straight!
+Opponent's card : H7 S7 S9 DJ CJ, Rank : Two Pairs!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 37!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H3 D8 S9 DK CK
+AIP  : D7 S8 C5 H6 C9
+Rank of AIP : Straight!
+
+AIP did not exchange any of its card
+AIP  : C5 H6 D7 S8 C9
+
+AIP's card : C5 H6 D7 S8 C9, Rank : Straight!
+Opponent's card : H3 D8 S9 DK CK, Rank : One Pair!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 38!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D2 C4 C8 DQ SA
+AIP  : D7 S8 C5 H6 C9
+Rank of AIP : Straight!
+
+AIP did not exchange any of its card
+AIP  : C5 H6 D7 S8 C9
+
+AIP's card : C5 H6 D7 S8 C9, Rank : Straight!
+Opponent's card : D2 C4 C8 DQ SA, Rank : High Card!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 39!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : S9 S7 H7 DJ CJ
+AIP  : D6 C10 C2 D10 H10
+Rank of AIP : Three of A Kind!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Straight, exchange one card
+
+AIP will discard cards : C2
+Card received for exchange: H2
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : H2 D6 D10 C10 H10
+
+AIP's card : H2 D6 D10 C10 H10, Rank : Three of A Kind!
+Opponent's card : H7 S7 S9 DJ CJ, Rank : Two Pairs!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 40!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C4 D8 CK S9 DK
+AIP  : D6 C10 C2 D10 H10
+Rank of AIP : Three of A Kind!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Straight, exchange one card
+
+AIP will discard cards : C2
+Card received for exchange: H2
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : H2 D6 D10 C10 H10
+
+AIP's card : H2 D6 D10 C10 H10, Rank : Three of A Kind!
+Opponent's card : C4 D8 S9 DK CK, Rank : One Pair!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 41!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D2 C4 S8 DQ SK
+AIP  : D6 C10 C2 D10 H10
+Rank of AIP : Three of A Kind!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Straight, exchange one card
+
+AIP will discard cards : C2
+Card received for exchange: H2
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : H2 D6 D10 C10 H10
+
+AIP's card : H2 D6 D10 C10 H10, Rank : Three of A Kind!
+Opponent's card : D2 C4 S8 DQ SK, Rank : High Card!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 42!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C9 D8 D7 D2 C2
+AIP  : S9 S4 H4 DJ CJ
+Rank of AIP : Two Pairs!
+
+AIP will exchange card to improve its rank!
+AIP has two pairs, exchange one card
+
+AIP will discard cards : S9
+Card received for exchange: S3
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S3 H4 S4 DJ CJ
+
+AIP's card : S3 H4 S4 DJ CJ, Rank : Two Pairs!
+Opponent's card : D2 C2 D7 D8 C9, Rank : One Pair!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 43!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D2 C9 S8 DQ S4
+AIP  : S9 S4 H4 DJ CJ
+Rank of AIP : Two Pairs!
+
+AIP will exchange card to improve its rank!
+AIP has two pairs, exchange one card
+
+AIP will discard cards : S9
+Card received for exchange: S3
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S3 H4 S4 DJ CJ
+
+AIP's card : S3 H4 S4 DJ CJ, Rank : Two Pairs!
+Opponent's card : D2 S4 S8 C9 DQ, Rank : High Card!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 44!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D2 C6 S8 DQ S10
+AIP  : C4 D8 S9 DK CK
+Rank of AIP : One Pair!
+
+AIP will exchange card to improve its rank!
+AIP has one pair, exchange three card
+
+AIP will discard cards : C4 D8 S9
+Card received for exchange: CA C10 S2
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S2 C10 DK CK CA
+
+AIP's card : S2 C10 DK CK CA, Rank : One Pair!
+Opponent's card : D2 C6 S8 S10 DQ, Rank : High Card!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 45!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H10 HJ HQ HK HA
+AIP  : S10 SJ SQ SK D10
+Rank of AIP : One Pair!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Royal Flush, exchange one card
+
+AIP will discard cards : D10
+Card received for exchange: SA
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S10 SJ SQ SK SA
+
+AIP's card : S10 SJ SQ SK SA, Rank : Royal Flush!
+Opponent's card : H10 HJ HQ HK HA, Rank : Royal Flush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 46!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H5 H6 H7 H8 H9
+AIP  : S6 S7 S8 S9 D2
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Straight Flush, exchange one card
+
+AIP will discard cards : D2
+Card received for exchange: S10
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S6 S7 S8 S9 S10
+
+AIP's card : S6 S7 S8 S9 S10, Rank : Straight FLush!
+Opponent's card : H5 H6 H7 H8 H9, Rank : Straight FLush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 47!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H5 H6 H7 H8 H9
+AIP  : S5 S6 S7 S8 D2
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Straight Flush, exchange one card
+
+AIP will discard cards : D2
+Card received for exchange: S9
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S5 S6 S7 S8 S9
+
+AIP's card : S5 S6 S7 S8 S9, Rank : Straight FLush!
+Opponent's card : H5 H6 H7 H8 H9, Rank : Straight FLush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 48!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : DJ CJ HJ SJ D3
+AIP  : DQ CQ HQ S4 D2
+Rank of AIP : Three of A Kind!
+
+AIP will exchange card to improve its rank!
+AIP has three of a same rank, exchange two card
+
+AIP will discard cards : D2 S4
+Card received for exchange: SQ D5
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : D5 DQ CQ HQ SQ
+
+AIP's card : D5 DQ CQ HQ SQ, Rank : Four of A Kind!
+Opponent's card : D3 DJ CJ HJ SJ, Rank : Four of A Kind!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 49!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C10 H10 S10 SK DK
+AIP  : CJ HJ SJ D2 S6
+Rank of AIP : Three of A Kind!
+
+AIP will exchange card to improve its rank!
+AIP has three of a same rank, exchange two card
+
+AIP will discard cards : D2 S6
+Card received for exchange: HK CK
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : CJ HJ SJ CK HK
+
+AIP's card : CJ HJ SJ CK HK, Rank : Full House!
+Opponent's card : C10 H10 S10 DK SK, Rank : Full House!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 50!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H9 C9 D9 S2 S5
+AIP  : H10 C10 D2 D3 C7
+Rank of AIP : One Pair!
+
+AIP will exchange card to improve its rank!
+AIP has one pair, exchange three card
+
+AIP will discard cards : D2 D3 C7
+Card received for exchange: D10 C6 C5
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : C5 C6 D10 C10 H10
+
+AIP's card : C5 C6 D10 C10 H10, Rank : Three of A Kind!
+Opponent's card : S2 S5 D9 C9 H9, Rank : Three of A Kind!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 51!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H5 S7 S8 D9 S6
+AIP  : S5 D8 H6 C7 S9
+Rank of AIP : Straight!
+
+AIP did not exchange any of its card
+AIP  : S5 H6 C7 D8 S9
+
+AIP's card : S5 H6 C7 D8 S9, Rank : Straight!
+Opponent's card : H5 S6 S7 S8 D9, Rank : Straight!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 52!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D2 H4 S6 D3 H5
+AIP  : S5 H6 C7 D8 S9
+Rank of AIP : Straight!
+
+AIP did not exchange any of its card
+AIP  : S5 H6 C7 D8 S9
+
+AIP's card : S5 H6 C7 D8 S9, Rank : Straight!
+Opponent's card : D2 D3 H4 H5 S6, Rank : Straight!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 53!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C6 S6 C8 H8 D2
+AIP  : S6 D6 S8 D8 CK
+Rank of AIP : Two Pairs!
+
+AIP will exchange card to improve its rank!
+AIP has two pairs, exchange one card
+
+AIP will discard cards : CK
+Card received for exchange: CQ
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : D6 S6 D8 S8 CQ
+
+AIP's card : D6 S6 D8 S8 CQ, Rank : Two Pairs!
+Opponent's card : D2 C6 S6 C8 H8, Rank : Two Pairs!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 54!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C6 S6 C7 H7 D2
+AIP  : S6 D6 S8 D8 CK
+Rank of AIP : Two Pairs!
+
+AIP will exchange card to improve its rank!
+AIP has two pairs, exchange one card
+
+AIP will discard cards : CK
+Card received for exchange: CQ
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : D6 S6 D8 S8 CQ
+
+AIP's card : D6 S6 D8 S8 CQ, Rank : Two Pairs!
+Opponent's card : D2 C6 S6 C7 H7, Rank : Two Pairs!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 55!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : DK HK D9 S2 C3
+AIP  : SK CK S6 D8 D2
+Rank of AIP : One Pair!
+
+AIP will exchange card to improve its rank!
+AIP has one pair, exchange three card
+
+AIP will discard cards : D2 S6 D8
+Card received for exchange: S7 D6 C8
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : D6 S7 C8 CK SK
+
+AIP's card : D6 S7 C8 CK SK, Rank : One Pair!
+Opponent's card : S2 C3 D9 DK HK, Rank : One Pair!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 56!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : DQ HQ D9 S2 C3
+AIP  : SK CK S6 D8 D2
+Rank of AIP : One Pair!
+
+AIP will exchange card to improve its rank!
+AIP has one pair, exchange three card
+
+AIP will discard cards : D2 S6 D8
+Card received for exchange: S7 D6 C8
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : D6 S7 C8 CK SK
+
+AIP's card : D6 S7 C8 CK SK, Rank : One Pair!
+Opponent's card : S2 C3 D9 DQ HQ, Rank : One Pair!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 57!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C2 H6 S8 D3 HQ
+AIP  : SJ C6 C8 S3 SA
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP has three of the same suit, exchange two card
+
+AIP will discard cards : C6 C8
+Card received for exchange: D9 H2
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : H2 S3 D9 SJ SA
+
+AIP's card : H2 S3 D9 SJ SA, Rank : High Card!
+Opponent's card : C2 D3 H6 S8 HQ, Rank : High Card!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 58!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : C2 H6 S8 D3 HA
+AIP  : S10 C6 C8 S3 SA
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP has three of the same suit, exchange two card
+
+AIP will discard cards : C6 C8
+Card received for exchange: D9 H2
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : H2 S3 D9 S10 SA
+
+AIP's card : H2 S3 D9 S10 SA, Rank : High Card!
+Opponent's card : C2 D3 H6 S8 HA, Rank : High Card!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 59!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H5 H8 H10 HJ HA
+AIP  : S5 S8 S10 SJ D2
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Flush, exchange one card
+
+AIP will discard cards : D2
+Card received for exchange: SA
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S5 S8 S10 SJ SA
+
+AIP's card : S5 S8 S10 SJ SA, Rank : Flush!
+Opponent's card : H5 H8 H10 HJ HA, Rank : Flush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 60!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H5 H8 H10 HJ HA
+AIP  : S6 S8 S10 SJ D2
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Flush, exchange one card
+
+AIP will discard cards : D2
+Card received for exchange: SA
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S6 S8 S10 SJ SA
+
+AIP's card : S6 S8 S10 SJ SA, Rank : Flush!
+Opponent's card : H5 H8 H10 HJ HA, Rank : Flush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 61!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H5 H8 H10 HJ HA
+AIP  : S4 S9 S10 SJ D2
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Flush, exchange one card
+
+AIP will discard cards : D2
+Card received for exchange: SA
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S4 S9 S10 SJ SA
+
+AIP's card : S4 S9 S10 SJ SA, Rank : Flush!
+Opponent's card : H5 H8 H10 HJ HA, Rank : Flush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 62!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H4 H7 H9 HJ HA
+AIP  : S3 S6 S10 SJ D2
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Flush, exchange one card
+
+AIP will discard cards : D2
+Card received for exchange: SA
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S3 S6 S10 SJ SA
+
+AIP's card : S3 S6 S10 SJ SA, Rank : Flush!
+Opponent's card : H4 H7 H9 HJ HA, Rank : Flush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 63!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : H5 H8 H10 H3 HA
+AIP  : S5 S8 S10 SJ D2
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Flush, exchange one card
+
+AIP will discard cards : D2
+Card received for exchange: SA
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : S5 S8 S10 SJ SA
+
+AIP's card : S5 S8 S10 SJ SA, Rank : Flush!
+Opponent's card : H3 H5 H8 H10 HA, Rank : Flush!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 64!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D8 C8 S9 H8 H6
+AIP  : SA H3 C5 H4 S10
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Straight, exchange one card
+
+AIP will discard cards : S10
+Card received for exchange: H2
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : SA H2 H3 H4 C5
+
+AIP's card : SA H2 H3 H4 C5, Rank : Straight!
+Opponent's card : H6 D8 C8 H8 S9, Rank : Three of A Kind!
+
+AIP Wins!
+
+-----------------------------------------------------------------
+                            Game 65!!
+-----------------------------------------------------------------
+INITIAL HANDS:
+Opponent  : D8 C8 S9 H8 H6
+AIP  : S7 H10 CJ H9 SK
+Rank of AIP : High Card!
+
+AIP will exchange card to improve its rank!
+AIP is one card away from Straight, exchange one card
+
+AIP will discard cards : S7
+Card received for exchange: HQ
+
+AIP'S HAND AFTER CARD EXCHANGE :
+AIP  : H9 H10 CJ HQ SK
+
+AIP's card : H9 H10 CJ HQ SK, Rank : Straight!
+Opponent's card : H6 D8 C8 H8 S9, Rank : Three of A Kind!
+
+AIP Wins!

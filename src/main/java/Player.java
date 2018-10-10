@@ -27,21 +27,6 @@ public class Player {
         return hand.size();
     }
 
-    //hand can only held 5 cards
-    //have to make sure unwanted cards
-    //is discarded before drawing a card
-    public Card drawCard(Deck cardDeck){
-        if(hand.size() < 5) {
-            Card drawnCard = cardDeck.pop();
-            hand.add(drawnCard);
-
-            return drawnCard;
-        }
-        else{
-            System.out.println("You need to discard card first,max number of cards is 5");
-        }
-        return null;
-    }
 
     public void discardCard(Card c){
         hand.remove(c);
@@ -56,10 +41,10 @@ public class Player {
     }
 
     public void printHand(){
-        System.out.print(name + "  : ");
+        String handString = name + "  : ";
         for(int i = 0 ; i < handSize(); i ++){
-            System.out.print(hand.get(i).toString() + " ");
+            handString += hand.get(i).toString() + " ";
         }
-        System.out.println();
+        System.out.println(handString.trim());
     }
 }
