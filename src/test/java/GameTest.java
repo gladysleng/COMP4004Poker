@@ -109,7 +109,9 @@ public class GameTest {
                 g.getCardsToExchange().get(0)
         });
         h.sortHand(expectedOutput);
+
         g.playRound(gameLine);
+
         assertEquals(expectedOutput,g.getAip().getHand());
     }
 
@@ -329,4 +331,69 @@ public class GameTest {
         assertEquals(expectedOutput,g.getAip().getHand());
     }
 
+    @org.junit.Test
+    public void royalFlushWinsTest() {
+        String gameLine = "S10 SK SQ SJ SA H9 HJ HQ HK H10";
+        storeAIPInitialHand(gameLine);
+        Player expectedWinner = g.getAip();
+
+        Player actualWinner = g.playRound(gameLine);
+
+        assertEquals(expectedWinner,actualWinner);
+    }
+
+    @org.junit.Test
+    public void straightFlushLoseRoyalFlushTest() {
+        String gameLine = "S9 S10 SK SQ SJ HK HJ HQ H10 HA";
+        storeAIPInitialHand(gameLine);
+        Player expectedWinner = g.getOpponent();
+
+        Player actualWinner = g.playRound(gameLine);
+
+        assertEquals(expectedWinner,actualWinner);
+    }
+
+    @org.junit.Test
+    public void straightFlushWinsFourOfAKindTest() {
+        String gameLine = "S9 S10 SK SQ SJ HK H4 C4 D4 S4";
+        storeAIPInitialHand(gameLine);
+        Player expectedWinner = g.getAip();
+
+        Player actualWinner = g.playRound(gameLine);
+
+        assertEquals(expectedWinner,actualWinner);
+    }
+
+    @org.junit.Test
+    public void FourOfAKindWinsFlushTest() {
+        String gameLine = "HK H4 C4 D4 S4 D8 D3 D9 D10 D5";
+        storeAIPInitialHand(gameLine);
+        Player expectedWinner = g.getAip();
+
+        Player actualWinner = g.playRound(gameLine);
+
+        assertEquals(expectedWinner,actualWinner);
+    }
+
+    @org.junit.Test
+    public void FourOfAKindLoseRoyalFlushTest() {
+        String gameLine = "HK H4 C4 D4 S4 S10 SK SQ SJ SA";
+        storeAIPInitialHand(gameLine);
+        Player expectedWinner = g.getOpponent();
+
+        Player actualWinner = g.playRound(gameLine);
+
+        assertEquals(expectedWinner,actualWinner);
+    }
+
+    @org.junit.Test
+    public void FourOfAKindLoseStraightFlushTest() {
+        String gameLine = "H10 C10 D10 D3 C7 H9 C9 D9 S2 S5 D2 C6";
+        storeAIPInitialHand(gameLine);
+        Player expectedWinner = g.getOpponent();
+
+        Player actualWinner = g.playRound(gameLine);
+
+        assertEquals(expectedWinner,actualWinner);
+    }
 }
