@@ -396,4 +396,8 @@ public class GameTest {
 
         assertEquals(expectedWinner,actualWinner);
     }
+
+
+    //@org.junit.Rule
+    //public final SystemErrRule systemErrRule = new SystemErrRule().enableLog();
 }
